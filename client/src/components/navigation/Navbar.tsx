@@ -1,7 +1,7 @@
 import React from "react";
 import MaxWidthWrapper from "../../hooks/MaxWithWrapper";
 import { RiShoppingBag4Fill } from "react-icons/ri";
-import NavigationMenu from "../sections/NavbarSections/NavigationMenu";
+import { NavMenuDesktop } from "../sections/NavbarSections/NavMenuDesktop";
 
 function Navbar() {
   return (
@@ -13,7 +13,7 @@ function Navbar() {
               <p className="text-2xl font-semibold">میشا لند</p>
               <RiShoppingBag4Fill size={25} />
             </div>
-            <NavigationMenu />
+            <NavMenuDesktop />
           </div>
         </div>
       </MaxWidthWrapper>
