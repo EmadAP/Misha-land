@@ -1,7 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "vazirmatn/Vazirmatn-font-face.css";
 
 @custom-variant dark (&:is(.dark *));
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 @theme {
   --color-background-10: var(--color-stone-100);
@@ -18,11 +26,15 @@
   --color-accent-20: var(--color-sky-300);
   --color-accent-30: var(--color-sky-400);
 }
+@layer base {
+  * {
+    font-family: Vazirmatn, sans-serif;
+  }
+}
 
 body {
   background-color: var(--color-stone-100);
   color: var(--color-stone-800);
-  font-family: Vazirmatn, sans-serif;
 }
 
 @theme inline {
