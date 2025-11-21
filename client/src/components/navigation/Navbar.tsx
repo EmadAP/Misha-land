@@ -6,7 +6,7 @@ import NavAuthBtns from "../template/NavbarTemp/NavAuthBtns";
 
 function Navbar() {
   return (
-    <nav className="fixed w-full h-18 bg-transparent backdrop-blur-lg border-b-2 border-b-primary-30">
+    <nav className="fixed w-full h-18 bg-background-10  border-b-2 border-b-primary-30 z-50">
       <MaxWidthWrapper>
         <div className=" flex flex-row items-center justify-between gap-10 h-full">
           <div className="flex flex-row justify-between gap-10 items-center">
