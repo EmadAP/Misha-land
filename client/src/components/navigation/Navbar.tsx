@@ -11,7 +11,7 @@ function Navbar() {
         <div className=" flex flex-row items-center justify-between gap-10 h-full">
           <div className="flex flex-row justify-between gap-10 items-center">
             <div className="text-accent-30 flex flex-row justify-between gap-2 items-center">
-              <p className="text-2xl font-semibold">میشا لند</p>
+              <h1 className="text-2xl font-semibold">میشا لند</h1>
               <RiShoppingBag4Fill size={25} />
             </div>
             <NavMenuDesktop />
