@@ -11,7 +11,7 @@ function NavAuthBtns() {
         {!user && (
           <a
             href="#"
-            className="py-1 px-4 border rounded-md border-primary-30 hover:bg-primary-30 hover:text-background-10 transform duration-150"
+            className="py-1 px-4 border rounded-md border-primary-30 hover:bg-primary-30 hover:text-background-10 transition duration-150"
           >
             ورود | ثبت نام
           </a>
