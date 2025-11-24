@@ -4,7 +4,7 @@ import { IoMdMail } from "react-icons/io";
 
 function FooterInfo() {
   return (
-    <div className="flex flex-col lg:flex-row lg:justify-start justify-between gap-10 items-start pt-30 pb-10">
+    <div className="flex flex-col lg:flex-row lg:justify-start justify-between gap-10 items-start pt-30 pb-14">
       <div className="flex flex-col gap-2 items-start">
         <div className="flex flex-row items-center gap-2">
           <FaLocationDot className="text-primary-30" />

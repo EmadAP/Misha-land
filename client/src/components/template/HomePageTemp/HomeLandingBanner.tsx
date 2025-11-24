@@ -10,13 +10,13 @@ function HomeLandingBanner() {
         <img
           src={menBannerImg}
           alt="men banner"
-          className="group-hover:scale-110 absolute inset-0 w-full h-full object-cover transform duration-300"
+          className="group-hover:scale-110 absolute inset-0 w-full h-full object-cover transition duration-300"
         />
         <a
           href="#"
-          className="absolute inset-0 items-end flex flex-col justify-end p-6 transform duration-300 pb-10 no-underline"
+          className="absolute inset-0 items-end flex flex-col justify-end p-6 transition duration-300 pb-10 no-underline"
         >
-          <span className="bg-background-10 flex flex-row items-center justify-between gap-4 px-6 py-2 font-semibold text-2xl rounded-md">
+          <span className="bg-background-10 flex flex-row items-center justify-between gap-4 px-6 py-2 font-semibold md:text-2xl text-lg rounded-md">
             کالکشن مردانه
             <FaArrowLeftLong size={20} />
           </span>
@@ -26,13 +26,13 @@ function HomeLandingBanner() {
         <img
           src={womenBannerImg}
           alt="women banner"
-          className="group-hover:scale-110 absolute inset-0 w-full h-full object-cover transform duration-300"
+          className="group-hover:scale-110 absolute inset-0 w-full h-full object-cover transition duration-300"
         />
         <a
           href="#"
-          className="absolute inset-0 items-end flex flex-col justify-end p-6 transform duration-300 pb-10 no-underline"
+          className="absolute inset-0 items-end flex flex-col justify-end p-6 transition duration-300 pb-10 no-underline"
         >
-          <span className="bg-background-10 flex flex-row items-center justify-between gap-4 px-6 py-2 font-semibold text-2xl rounded-md">
+          <span className="bg-background-10 flex flex-row items-center justify-between gap-4 px-6 py-2 font-semibold md:text-2xl text-lg rounded-md">
             کالکشن زنانه
             <FaArrowLeftLong size={20} />
           </span>
