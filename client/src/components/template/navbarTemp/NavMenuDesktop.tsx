@@ -1,4 +1,4 @@
-import MegaMenu from "../../sections/NavbarSection/MegaMenu";
+import MegaMenu from "../../sections/navbarSection/MegaMenu";
 import menImg from "@/assets/banner/navbar/men-1.png";
 import womenImg from "@/assets/banner/navbar/women-1.png";
 import AccessoriesImg from "@/assets/banner/navbar/AccessoriesImg.png";

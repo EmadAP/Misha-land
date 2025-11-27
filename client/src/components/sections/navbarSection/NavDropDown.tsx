@@ -43,8 +43,8 @@ function NavDropDown({ user }: NavDropDownProps) {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <Link
-              to="#"
-              className="flex flex-row justify-start gap-8 items-center w-full"
+              to="/my-account/dashboard"
+              className="flex flex-row justify-start gap-8 items-center w-full h-full px-2 py-1.5"
             >
               <MdDashboardCustomize className="text-text-10" />
               پیشخوان
@@ -53,8 +53,8 @@ function NavDropDown({ user }: NavDropDownProps) {
           <DropdownMenuSeparator className="mr-10" />
           <DropdownMenuItem>
             <Link
-              to="#"
-              className="flex flex-row justify-start gap-8 items-center w-full"
+              to="/my-account/orders"
+              className="flex flex-row justify-start gap-8 items-center w-full h-full px-2 py-1.5"
             >
               <MdOutlineShoppingBag className="text-text-10" />
               سفارش ها
@@ -63,8 +63,8 @@ function NavDropDown({ user }: NavDropDownProps) {
           <DropdownMenuSeparator className="mr-10" />
           <DropdownMenuItem>
             <Link
-              to="#"
-              className="flex flex-row justify-start gap-8 items-center w-full"
+              to="/my-account/addresses"
+              className="flex flex-row justify-start gap-8 items-center w-full h-full px-2 py-1.5"
             >
               <LuMilestone className="text-text-10" />
               آدرس
@@ -73,8 +73,8 @@ function NavDropDown({ user }: NavDropDownProps) {
           <DropdownMenuSeparator className="mr-10" />
           <DropdownMenuItem>
             <Link
-              to="#"
-              className="flex flex-row justify-start gap-8 items-center w-full"
+              to="/my-account/account-details"
+              className="flex flex-row justify-start gap-8 items-center w-full h-full px-2 py-1.5"
             >
               <BiSolidUserDetail className="text-text-10" />
               جزئیات حساب
@@ -83,8 +83,8 @@ function NavDropDown({ user }: NavDropDownProps) {
           <DropdownMenuSeparator className="mr-10" />
           <DropdownMenuItem>
             <Link
-              to="#"
-              className="flex flex-row justify-start gap-8 items-center w-full"
+              to="/my-account/wishlist"
+              className="flex flex-row justify-start gap-8 items-center w-full h-full px-2 py-1.5"
             >
               <MdFavoriteBorder className="text-text-10" />
               علاقه مندی ها
@@ -95,7 +95,7 @@ function NavDropDown({ user }: NavDropDownProps) {
         <DropdownMenuItem variant="destructive">
           <button
             onClick={() => signOut()}
-            className="flex flex-row items-center justify-between gap-8 text-white"
+            className="flex flex-row items-center justify-start gap-8 text-white w-full h-full px-2 py-1.5"
           >
             <CiLogout className="text-white" />
             خروج از حساب کاربری

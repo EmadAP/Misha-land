@@ -1,8 +1,8 @@
 import React from "react";
 import MaxWidthWrapper from "../../hooks/MaxWithWrapper";
 import { RiShoppingBag4Fill } from "react-icons/ri";
-import { NavMenuDesktop } from "../template/NavbarTemp/NavMenuDesktop";
-import NavAuthBtns from "../template/NavbarTemp/NavAuthBtns";
+import { NavMenuDesktop } from "../template/navbarTemp/NavMenuDesktop";
+import NavAuthBtns from "../template/navbarTemp/NavAuthBtns";
 
 function Navbar() {
   return (
