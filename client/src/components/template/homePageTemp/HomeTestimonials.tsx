@@ -1,6 +1,6 @@
-import TestimonialsAboutSection from "@/components/sections/HomePageSection/TestimonialsAboutSection";
-import TestimonialsBanner from "@/components/sections/HomePageSection/TestimonialsBanner";
-import { TestimonialsFaq } from "@/components/sections/HomePageSection/TestimonialsFaq";
+import TestimonialsAboutSection from "@/components/sections/homePageSection/TestimonialsAboutSection";
+import TestimonialsBanner from "@/components/sections/homePageSection/TestimonialsBanner";
+import { TestimonialsFaq } from "@/components/sections/homePageSection/TestimonialsFaq";
 import MaxWidthWrapper from "@/hooks/MaxWithWrapper";
 import React from "react";
 

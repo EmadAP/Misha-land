@@ -1,5 +1,5 @@
-import CategoryColumn from "@/components/sections/NavbarSection/CategoryColumn";
-import CategoryImageSection from "@/components/sections/NavbarSection/CategoryImageSection";
+import CategoryColumn from "@/components/sections/navbarSection/CategoryColumn";
+import CategoryImageSection from "@/components/sections/navbarSection/CategoryImageSection";
 import { Separator } from "@/components/ui/separator";
 
 interface MegaMenuProps {

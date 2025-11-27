@@ -1,7 +1,7 @@
 import React from "react";
-import HomeSeasonCollections from "@/components/template/HomePageTemp/HomeSeasonCollections";
-import HomeLandingBanner from "@/components/template/HomePageTemp/HomeLandingBanner";
-import HomeTestimonials from "@/components/template/HomePageTemp/HomeTestimonials";
+import HomeSeasonCollections from "@/components/template/homePageTemp/HomeSeasonCollections";
+import HomeLandingBanner from "@/components/template/homePageTemp/HomeLandingBanner";
+import HomeTestimonials from "@/components/template/homePageTemp/HomeTestimonials";
 
 function HomePage() {
   return (

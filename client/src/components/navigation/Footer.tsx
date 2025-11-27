@@ -1,8 +1,8 @@
 import MaxWidthWrapper from "@/hooks/MaxWithWrapper";
 import React from "react";
-import FooterEntry from "../template/FooterTemp/FooterEntry";
-import FooterInfo from "../template/FooterTemp/FooterInfo";
-import FooterPages from "../template/FooterTemp/FooterPages";
+import FooterEntry from "../template/footerTemp/FooterEntry";
+import FooterInfo from "../template/footerTemp/FooterInfo";
+import FooterPages from "../template/footerTemp/FooterPages";
 
 function Footer() {
   return (

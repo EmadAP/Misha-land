@@ -3,12 +3,12 @@ import springBannerImg from "@/assets/banner/landing/springCollectionBanner.jpg"
 import summerBannerImg from "@/assets/banner/landing/summerCollectionBanner.jpg";
 import fallBannerImg from "@/assets/banner/landing/fallCollectionBanner.jpg";
 import winterBannerImg from "@/assets/banner/landing/winterCollectionBanner.jpg";
-import CollectionCard from "@/components/sections/HomePageSection/CollectionCard";
+import CollectionCard from "@/components/sections/homePageSection/CollectionCard";
 import { IconMP } from "@/components/ui/IconMP";
-import { SeasonCollectionsCarousel } from "@/components/sections/HomePageSection/SeasonCollectionsCarousel";
-import AccessoriesCollectionBanner from "@/components/sections/HomePageSection/AccessoriesCollectionBanner";
+import { SeasonCollectionsCarousel } from "@/components/sections/homePageSection/SeasonCollectionsCarousel";
+import AccessoriesCollectionBanner from "@/components/sections/homePageSection/AccessoriesCollectionBanner";
 import MaxWidthWrapper from "@/hooks/MaxWithWrapper";
-import ClothCollectionBanner from "@/components/sections/HomePageSection/ClothCollectionBanner";
+import ClothCollectionBanner from "@/components/sections/homePageSection/ClothCollectionBanner";
 
 function HomeSeasonCollections() {
   const seasonCollection = [
