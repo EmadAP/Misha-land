@@ -18,7 +18,7 @@ export default function ProtectedLayout() {
     <>
       <Navbar />
       <main className="min-h-screen w-full">
-        <div className="flex flex-col h-full items-center justify-between gap-10 pt-18">
+        <div className="flex flex-col h-full items-center justify-between gap-10 py-18">
           <ProtectedLayoutBanner />
           <MaxWidthWrapper>
             <Outlet />
