@@ -11,6 +11,7 @@ import {
   NavigationMenuLink,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Link } from "react-router-dom";
 
 export function NavMenuDesktop() {
   const commonItems = [
@@ -89,7 +90,7 @@ export function NavMenuDesktop() {
 
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <a href="/docs">کالکشن</a>
+            <Link to="/browse">store</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

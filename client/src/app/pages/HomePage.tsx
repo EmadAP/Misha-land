@@ -5,7 +5,7 @@ import HomeTestimonials from "@/components/template/homePageTemp/HomeTestimonial
 
 function HomePage() {
   return (
-    <div className="py-16">
+    <div className="py-18">
       <HomeLandingBanner />
       <HomeSeasonCollections />
       <HomeTestimonials />

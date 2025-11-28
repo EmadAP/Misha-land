@@ -1,10 +1,10 @@
-import type { WishlistItem } from "@/app/pages/protectedPages/WishlistPage";
+import type { ProductItemCardProps } from "@/lib/type";
 import React from "react";
 
 /* --------------------------------------
     CARD COMPONENT
 --------------------------------------- */
-export default function ProductItemCard({ item }: { item: WishlistItem }) {
+export default function ProductItemCard({ item }: { item: ProductItemCardProps }) {
   return (
     <div className="bg-white/10 backdrop-blur rounded-xl p-4 shadow-md border border-white/20">
       <img

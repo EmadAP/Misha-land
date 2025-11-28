@@ -3,6 +3,7 @@ import MaxWidthWrapper from "../../hooks/MaxWithWrapper";
 import { RiShoppingBag4Fill } from "react-icons/ri";
 import { NavMenuDesktop } from "../template/navbarTemp/NavMenuDesktop";
 import NavAuthBtns from "../template/navbarTemp/NavAuthBtns";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -10,10 +11,13 @@ function Navbar() {
       <MaxWidthWrapper>
         <div className=" flex flex-row items-center justify-between gap-10 h-full">
           <div className="flex flex-row justify-between gap-10 items-center">
-            <div className="text-accent-30 flex flex-row justify-between gap-2 items-center">
+            <Link
+              to="/"
+              className="text-accent-30 flex flex-row justify-between gap-2 items-center"
+            >
               <h1 className="text-2xl font-semibold">میشا لند</h1>
               <RiShoppingBag4Fill size={25} />
-            </div>
+            </Link>
             <NavMenuDesktop />
           </div>
           <NavAuthBtns />

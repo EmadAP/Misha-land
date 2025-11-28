@@ -10,12 +10,14 @@ import OrdersPage from "./app/pages/protectedPages/OrdersPage";
 import AddressesPage from "./app/pages/protectedPages/AddressesPage";
 import AccountDetailsPage from "./app/pages/protectedPages/AccountDetailsPage";
 import WishlistPage from "./app/pages/protectedPages/WishlistPage";
+import BrowsePage from "./app/pages/other/BrowsePage";
 
 function App() {
   return (
     <Routes>
       <Route element={<PublicLayout />}>
         <Route index element={<HomePage />} />
+        <Route path="/browse" element={<BrowsePage />} />
       </Route>
       <Route element={<AuthLayout />}>
         <Route
