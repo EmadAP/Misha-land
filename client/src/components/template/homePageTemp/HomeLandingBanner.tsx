@@ -5,7 +5,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 
 function HomeLandingBanner() {
   return (
-    <div className="flex flex-row items-center justify-center w-full pt-2">
+    <div className="flex flex-row items-center justify-center w-full ">
       <div className="group relative w-1/2 min-h-[93vh] overflow-hidden">
         <img
           src={menBannerImg}
