@@ -7,13 +7,13 @@ function BrowsePage() {
   return (
     <div className="py-38">
       <MaxWidthWrapper>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-between gap-5 lg:gap-10">
-          <div className="hidden lg:flex lg:col-span-1">
-            <BrowseSidebarTemp />
+        <div className="flex flex-row justify-between gap-5 lg:gap-10">
+          <div className="hidden md:block min-w-64">
+            <div className="sticky top-24">
+              <BrowseSidebarTemp />
+            </div>
           </div>
-          <div className="col-span-1 md:col-span-2">
-            <BrowseItemsTemp />
-          </div>
+          <BrowseItemsTemp />
         </div>
       </MaxWidthWrapper>
     </div>

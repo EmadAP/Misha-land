@@ -90,7 +90,7 @@ export function NavMenuDesktop() {
 
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link to="/browse">store</Link>
+            <Link to="/browse">فروشگاه</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
