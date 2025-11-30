@@ -1,7 +1,6 @@
 import React from "react";
 import {
   ArchiveIcon,
-  ArrowLeftIcon,
   CalendarPlusIcon,
   ClockIcon,
   ListFilterPlusIcon,
@@ -27,19 +26,24 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import { PiListMagnifyingGlass } from "react-icons/pi";
+
 function BrowseItemsNav() {
   const [label, setLabel] = React.useState("personal");
 
   return (
     <div className="w-full">
       <ButtonGroup>
+        <PiListMagnifyingGlass size={30} />
         <ButtonGroup className="flex-row-reverse">
-          <Button variant="outline">Archive</Button>
-          <Button variant="outline">Report</Button>
-          <Button variant="outline">Snooze</Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon" aria-label="More Options">
+              <Button
+                variant="outline"
+                size="icon"
+                aria-label="More Options"
+                className="bg-background-10 hover:bg-background-20 "
+              >
                 <MoreHorizontalIcon />
               </Button>
             </DropdownMenuTrigger>
@@ -100,6 +104,30 @@ function BrowseItemsNav() {
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
+          <Button
+            variant="outline"
+            className="bg-background-10 hover:bg-background-20 "
+          >
+            گران ترین
+          </Button>
+          <Button
+            variant="outline"
+            className="bg-background-10 hover:bg-background-20 "
+          >
+            ارزان ترین
+          </Button>
+          <Button
+            variant="outline"
+            className="bg-background-10 hover:bg-background-20 "
+          >
+            جدید ترین
+          </Button>
+          <Button
+            variant="outline"
+            className="bg-background-10 hover:bg-background-20 "
+          >
+            مرتبط ترین
+          </Button>
         </ButtonGroup>
       </ButtonGroup>
     </div>
