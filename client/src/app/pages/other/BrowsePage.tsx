@@ -1,7 +1,6 @@
 import BrowseItemsTemp from "@/components/template/browseTemp/BrowseItemsTemp";
 import BrowseSidebarTemp from "@/components/template/browseTemp/BrowseSidebarTemp";
 import MaxWidthWrapper from "@/hooks/MaxWithWrapper";
-import React from "react";
 
 function BrowsePage() {
   return (
