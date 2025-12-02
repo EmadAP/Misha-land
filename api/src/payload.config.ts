@@ -22,6 +22,9 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
+  cors: ['http://localhost:5173'],
+  csrf: ['http://localhost:5173'],
+
   collections: [Users, Media, Cart, Categories, Products],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
