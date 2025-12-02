@@ -6,43 +6,41 @@ export const Products: CollectionConfig = {
     useAsTitle: 'title',
   },
   fields: [
-    // Product Title
+    {
+      name: 'type',
+      type: 'select',
+      required: true,
+      options: [
+        { label: 'Clothing', value: 'clothing' },
+        { label: 'Accessory', value: 'accessory' },
+      ],
+    },
     {
       name: 'title',
       type: 'text',
       required: true,
     },
-
-    // Product Image
     {
       name: 'image',
       type: 'upload',
       relationTo: 'media',
       required: true,
     },
-
-    // Description
     {
       name: 'description',
       type: 'textarea',
     },
-
-    // Base Price
     {
       name: 'price',
       type: 'number',
       required: true,
       min: 0,
     },
-
-    // On Sale
     {
       name: 'onSale',
       type: 'checkbox',
       defaultValue: false,
     },
-
-    // Discount %
     {
       name: 'discount',
       type: 'number',
@@ -52,13 +50,13 @@ export const Products: CollectionConfig = {
         condition: (data) => data?.onSale === true,
       },
     },
-
-    // Sizes
     {
       name: 'size',
       type: 'select',
       hasMany: true,
-      required: true,
+      admin: {
+        condition: (data) => data?.type === 'clothing',
+      },
       options: [
         { label: 'SM', value: 'sm' },
         { label: 'MD', value: 'md' },
@@ -68,8 +66,6 @@ export const Products: CollectionConfig = {
         { label: '3XL', value: 'xxxl' },
       ],
     },
-
-    // Colors
     {
       name: 'color',
       type: 'select',
@@ -86,8 +82,6 @@ export const Products: CollectionConfig = {
         { label: 'Brown', value: 'brown' },
       ],
     },
-
-    // Stock Quantity
     {
       name: 'quantity',
       type: 'number',
@@ -95,8 +89,6 @@ export const Products: CollectionConfig = {
       defaultValue: 0,
       min: 0,
     },
-
-    // Relationships: Categories
     {
       name: 'categories',
       type: 'relationship',

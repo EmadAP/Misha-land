@@ -191,13 +191,14 @@ export interface Cart {
  */
 export interface Product {
   id: string;
+  type: 'clothing' | 'accessory';
   title: string;
   image: string | Media;
   description?: string | null;
   price: number;
   onSale?: boolean | null;
   discount?: number | null;
-  size: ('sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl')[];
+  size?: ('sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl')[] | null;
   color: ('black' | 'white' | 'red' | 'green' | 'blue' | 'yellow' | 'orange' | 'brown')[];
   quantity: number;
   categories: (string | Category)[];
@@ -379,6 +380,7 @@ export interface CategoriesSelect<T extends boolean = true> {
  * via the `definition` "products_select".
  */
 export interface ProductsSelect<T extends boolean = true> {
+  type?: T;
   title?: T;
   image?: T;
   description?: T;
