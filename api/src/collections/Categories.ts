@@ -6,22 +6,17 @@ export const Categories: CollectionConfig = {
     useAsTitle: 'name',
   },
   fields: [
-    // Category Name
     {
       name: 'name',
       type: 'text',
       required: true,
     },
-
-    // Slug (auto)
     {
       name: 'slug',
       type: 'text',
       required: true,
       unique: true,
     },
-
-    // Gender
     {
       name: 'gender',
       type: 'select',
@@ -31,8 +26,6 @@ export const Categories: CollectionConfig = {
         { label: 'Women', value: 'women' },
       ],
     },
-
-    // Season
     {
       name: 'season',
       type: 'select',
