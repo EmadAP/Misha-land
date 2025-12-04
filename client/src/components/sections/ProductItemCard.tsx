@@ -6,12 +6,14 @@ interface ProductItemCardProps {
 }
 
 const ProductItemCard: React.FC<ProductItemCardProps> = ({ product }) => {
-  const imageUrl =
+  const rawUrl =
     typeof product.image === "string"
       ? product.image
-      : product.image?.url
-      ? "http://localhost:3000" + product.image.url
-      : "";
+      : product.image?.url || "";
+
+  const imageUrl = rawUrl.startsWith("http")
+    ? rawUrl
+    : `http://localhost:3000${rawUrl}`;
   return (
     <div className="bg-white/10 backdrop-blur rounded-xl p-4 shadow-md border border-white/20">
       <img

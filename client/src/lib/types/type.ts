@@ -1,6 +1,3 @@
-/* --------------------------------------
-    WISHLIST INTERFACE
---------------------------------------- */
 export interface ProductItemCardProps {
   id: string;
   title: string;
@@ -13,72 +10,102 @@ export interface ProductItemCardProps {
   inStock: boolean;
 }
 
-export type ProductSize = "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
-
-export type ProductColor =
-  | "black"
-  | "white"
-  | "red"
-  | "green"
-  | "blue"
-  | "yellow"
-  | "orange"
-  | "brown";
-
-export type CategoryGender = "men" | "women";
-
-export type CategorySeason = "spring" | "summer" | "fall" | "winter";
-
-export interface CartItem {
-  product: string;
-  price: number;
-  quantity: number;
-  lineTotal: number;
-}
-
-export interface Media {
+export interface BaseDoc {
   id: string;
-  url: string;
-  filename: string;
-  mimeType: string;
-  width: number;
-  height: number;
-  filesize: number;
-  alt?: string;
-}
-
-export interface Cart {
-  id: string;
-  userId: string;
-  items: CartItem[];
-  total: number;
-
   createdAt?: string;
   updatedAt?: string;
 }
 
-export interface Category {
-  id: string;
+export interface Media extends BaseDoc {
+  alt: string;
+  url?: string;
+  filename?: string;
+  mimeType?: string;
+  filesize?: number;
+  width?: number;
+  height?: number;
+}
+
+export type Season = "spring" | "summer" | "fall" | "winter";
+
+export interface Category extends BaseDoc {
   name: string;
   slug: string;
-  gender: CategoryGender;
-  season: CategorySeason[];
-  createdAt?: string;
-  updatedAt?: string;
+  season: Season;
 }
 
-export interface Product {
+export type BaseProduct = {
   id: string;
   title: string;
-  image: string | Media;
   description?: string;
   price: number;
   onSale: boolean;
   discount?: number;
-  size: ProductSize[];
-  color: ProductColor[];
   quantity: number;
+  image: Media | string;
   categories: string[] | Category[];
-  createdAt?: string;
-  updatedAt?: string;
+};
+
+export type ProductSize = "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+export interface MenClothing extends BaseProduct {
+  size: ProductSize[];
+  subType:
+    | "tshirt"
+    | "shirt"
+    | "hoodie"
+    | "sweater"
+    | "jacket"
+    | "shorts"
+    | "chino_pants"
+    | "jeans";
+}
+
+export interface WomenClothing extends BaseProduct {
+  size: ProductSize[];
+  subType:
+    | "blouse"
+    | "dress"
+    | "hoodie"
+    | "cardigan"
+    | "jacket"
+    | "skirt"
+    | "leggings"
+    | "jeans";
+}
+
+export interface Accessory extends BaseProduct {
+  subType:
+    | "bag"
+    | "shoes"
+    | "hat"
+    | "umbrella"
+    | "scarf"
+    | "watch"
+    | "gloves"
+    | "gift_set";
+}
+
+export type Product = Accessory | MenClothing | WomenClothing;
+
+export type CartProductRelation =
+  | "women-clothing"
+  | "men-clothing"
+  | "accessories";
+
+export interface CartProductRef {
+  relationTo: CartProductRelation;
+  value: string; // product ID
+}
+
+export interface CartItem {
+  product: CartProductRef | Product;
+  price: number;
+  quantity: number;
+  lineTotal?: number;
+}
+
+export interface Cart extends BaseDoc {
+  userId: string;
+  items: CartItem[];
+  total: number;
 }

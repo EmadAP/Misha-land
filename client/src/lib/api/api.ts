@@ -8,29 +8,45 @@ const api = axios.create({
   withCredentials: true,
 });
 
-export const GetAllProductsFc = async () => {
-  const res = await api.get("/api/products");
-  console.log("API DATA:", res.data);
+export const GetAllAccessoriesFc = async () => {
+  const res = await api.get("/api/accessories");
   return res.data.docs;
 };
 
-// export const GetEventByIdFc = async (id: string) => {
-//   const res = await api.get(`/api/events/${id}`);
-//   return res.data;
-// };
+export const GetAccessoriesByIdFc = async (id: string) => {
+  const res = await api.get(`/api/accessories/${id}`);
+  return res.data.docs;
+};
 
-// export const GetSectionsByEventIdFc = async (eventId: string) => {
-//   const res = await api.get(`/api/events/${eventId}/sections`);
-//   return res.data;
-// };
-// export const GetSectionByIdFc = async (id: string) => {
-//   const res = await api.get(`/api/sections/${id}`);
-//   return res.data;
-// };
-// export const GetAllSectionsFc = async () => {
-//   const res = await api.get("/api/sections");
-//   return res.data;
-// };
+export const GetAllMenClothingFc = async () => {
+  const res = await api.get("/api/men-clothing");
+  return res.data.docs;
+};
+
+export const GetMenClothingByIdFc = async (id: string) => {
+  const res = await api.get(`/api/men-clothing/${id}`);
+  return res.data.docs;
+};
+
+export const GetAllWomenClothingFc = async () => {
+  const res = await api.get("/api/women-clothing");
+  return res.data.docs;
+};
+
+export const GetWomenClothingByIdFc = async (id: string) => {
+  const res = await api.get(`/api/women-clothing/${id}`);
+  return res.data.docs;
+};
+
+export const GetAllCategoriesFc = async () => {
+  const res = await api.get("/api/categories");
+  return res.data.docs;
+};
+
+export const GetCategoriesByIdFc = async (id: string) => {
+  const res = await api.get(`/api/categories/${id}`);
+  return res.data.docs;
+};
 
 // export const CreatePendingTicketsFc = async (
 //   items: {
