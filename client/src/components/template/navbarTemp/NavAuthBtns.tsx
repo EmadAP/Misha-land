@@ -1,11 +1,10 @@
-import React from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 import { FiShoppingCart } from "react-icons/fi";
 import NavDropDown from "@/components/sections/navbarSection/NavDropDown";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
+import NavMenuMobile from "./NavMenuMobile";
 
 function NavAuthBtns() {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -39,9 +38,7 @@ function NavAuthBtns() {
         <Separator orientation="vertical" />
       </div>
       <div className="flex md:hidden">
-        <button className="hover:bg-background-20 p-2 rounded-full">
-          <GiHamburgerMenu size={20} />
-        </button>
+        <NavMenuMobile />
       </div>
     </div>
   );

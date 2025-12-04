@@ -1,20 +1,19 @@
 import { CollectionConfig } from 'payload'
 
-export const Products: CollectionConfig = {
-  slug: 'products',
+export const MenClothing: CollectionConfig = {
+  slug: 'men-clothing',
   admin: {
     useAsTitle: 'title',
   },
+
+  access: {
+    read: () => true,
+    create: ({ req }) => !!req.user,
+    update: ({ req }) => !!req.user,
+    delete: ({ req }) => !!req.user,
+  },
+
   fields: [
-    {
-      name: 'type',
-      type: 'select',
-      required: true,
-      options: [
-        { label: 'Clothing', value: 'clothing' },
-        { label: 'Accessory', value: 'accessory' },
-      ],
-    },
     {
       name: 'title',
       type: 'text',
@@ -54,9 +53,6 @@ export const Products: CollectionConfig = {
       name: 'size',
       type: 'select',
       hasMany: true,
-      admin: {
-        condition: (data) => data?.type === 'clothing',
-      },
       options: [
         { label: 'SM', value: 'sm' },
         { label: 'MD', value: 'md' },
@@ -67,19 +63,18 @@ export const Products: CollectionConfig = {
       ],
     },
     {
-      name: 'color',
+      name: 'subType',
       type: 'select',
-      hasMany: true,
       required: true,
       options: [
-        { label: 'Black', value: 'black' },
-        { label: 'White', value: 'white' },
-        { label: 'Red', value: 'red' },
-        { label: 'Green', value: 'green' },
-        { label: 'Blue', value: 'blue' },
-        { label: 'Yellow', value: 'yellow' },
-        { label: 'Orange', value: 'orange' },
-        { label: 'Brown', value: 'brown' },
+        { label: 'T-shirt', value: 'tshirt' },
+        { label: 'Shirt', value: 'shirt' },
+        { label: 'Hoodie / Sweatshirt', value: 'hoodie' },
+        { label: 'Sweater / Knitwear', value: 'sweater' },
+        { label: 'Jacket', value: 'jacket' },
+        { label: 'Shorts', value: 'shorts' },
+        { label: 'Chino Pants', value: 'chino_pants' },
+        { label: 'Jeans', value: 'jeans' },
       ],
     },
     {

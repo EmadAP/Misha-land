@@ -33,7 +33,6 @@ export function NavMenuDesktop() {
             <MegaMenu
               image={menImg}
               columns={[
-                { title: "پوشاک پسرانه", items: commonItems, href: "#" },
                 { title: "پوشاک مردانه", items: commonItems, href: "#" },
               ]}
             />
@@ -46,7 +45,6 @@ export function NavMenuDesktop() {
             <MegaMenu
               image={womenImg}
               columns={[
-                { title: "پوشاک دخترانه", items: commonItems, href: "#" },
                 { title: "پوشاک زنانه", items: commonItems, href: "#" },
               ]}
             />
@@ -60,19 +58,7 @@ export function NavMenuDesktop() {
               image={AccessoriesImg}
               columns={[
                 {
-                  title: "اکسسوری زنانه",
-                  items: [
-                    "کیف",
-                    "کفش",
-                    "کلاه",
-                    "جواهرات",
-                    "شال و روسری",
-                    "ست کادویی",
-                  ],
-                  href: "#",
-                },
-                {
-                  title: "اکسسوری مردانه",
+                  title: "مردانه و زنانه",
                   items: [
                     "کیف",
                     "کفش",

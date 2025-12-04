@@ -7,6 +7,22 @@ export const Cart: CollectionConfig = {
     useAsTitle: 'userId',
   },
 
+  access: {
+    read: ({ req }) => {
+      if (!req.user) return false
+      return { userId: { equals: req.user.id } }
+    },
+
+    update: ({ req }) => {
+      if (!req.user) return false
+      return { userId: { equals: req.user.id } }
+    },
+
+    create: ({ req }) => !!req.user,
+
+    delete: () => false,
+  },
+
   fields: [
     {
       name: 'userId',
@@ -21,7 +37,7 @@ export const Cart: CollectionConfig = {
         {
           name: 'product',
           type: 'relationship',
-          relationTo: 'products',
+          relationTo: ['women-clothing', 'men-clothing', 'accessories'],
           required: true,
         },
         {
@@ -54,7 +70,10 @@ export const Cart: CollectionConfig = {
     beforeChange: [
       ({ data }) => {
         type CartItem = {
-          product: string | number
+          product: {
+            relationTo: 'women-clothing' | 'men-clothing' | 'accessories'
+            value: string
+          }
           price: number
           quantity: number
           lineTotal?: number

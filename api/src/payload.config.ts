@@ -10,22 +10,26 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Cart } from './collections/Cart'
 import { Categories } from './collections/Categories'
-import { Products } from './collections/Products'
+import { Accessories } from './collections/Accessories'
+import { MenClothing } from './collections/MenClothing'
+import { WomenClothing } from './collections/WomenClothing'
+import { Admins } from './collections/Admins'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
   admin: {
-    user: Users.slug,
+    user: Admins.slug,
     importMap: {
       baseDir: path.resolve(dirname),
     },
   },
-  cors: ['http://localhost:5173'],
-  csrf: ['http://localhost:5173'],
+  cors: ['http://localhost:5173', 'http://localhost:3000'],
+  csrf: ['http://localhost:5173', 'http://localhost:3000'],
 
-  collections: [Users, Media, Cart, Categories, Products],
+  collections: [Admins, Users, Media, Cart, Categories, Accessories, MenClothing, WomenClothing],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

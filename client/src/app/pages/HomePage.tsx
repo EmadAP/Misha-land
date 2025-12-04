@@ -1,4 +1,3 @@
-import React from "react";
 import HomeSeasonCollections from "@/components/template/homePageTemp/HomeSeasonCollections";
 import HomeLandingBanner from "@/components/template/homePageTemp/HomeLandingBanner";
 import HomeTestimonials from "@/components/template/homePageTemp/HomeTestimonials";
