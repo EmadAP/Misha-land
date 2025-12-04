@@ -5,6 +5,12 @@ export const Categories: CollectionConfig = {
   admin: {
     useAsTitle: 'name',
   },
+  access: {
+    read: () => true,
+    create: ({ req }) => !!req.user,
+    update: ({ req }) => !!req.user,
+    delete: ({ req }) => !!req.user,
+  },
   fields: [
     {
       name: 'name',
@@ -18,18 +24,8 @@ export const Categories: CollectionConfig = {
       unique: true,
     },
     {
-      name: 'gender',
-      type: 'select',
-      required: true,
-      options: [
-        { label: 'Men', value: 'men' },
-        { label: 'Women', value: 'women' },
-      ],
-    },
-    {
       name: 'season',
       type: 'select',
-      hasMany: true,
       required: true,
       options: [
         { label: 'Spring', value: 'spring' },

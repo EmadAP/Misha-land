@@ -13,7 +13,7 @@ export default function CategoryColumn({
   href,
 }: CategoryColumnProps) {
   return (
-    <div className="py-4 flex flex-col items-start justify-baseline gap-6 w-1/3 h-[600px]">
+    <div className="py-4 flex flex-col items-start justify-baseline gap-6 w-1/2 h-[600px]">
       <a
         href="#"
         className="w-full group px-2 border-r-3 border-r-primary-30 flex flex-row gap-2 items-center"

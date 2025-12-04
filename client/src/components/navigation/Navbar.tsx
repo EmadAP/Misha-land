@@ -1,4 +1,3 @@
-import React from "react";
 import MaxWidthWrapper from "../../hooks/MaxWithWrapper";
 import { RiShoppingBag4Fill } from "react-icons/ri";
 import { NavMenuDesktop } from "../template/navbarTemp/NavMenuDesktop";
@@ -13,10 +12,10 @@ function Navbar() {
           <div className="flex flex-row justify-between gap-10 items-center">
             <Link
               to="/"
-              className="text-accent-30 flex flex-row justify-between gap-2 items-center"
+              className="text-accent-30 flex flex-row-reverse justify-between gap-2 items-center"
             >
-              <h1 className="text-2xl font-semibold">میشا لند</h1>
-              <RiShoppingBag4Fill size={25} />
+              <h1 className="text-2xl font-semibold">MishaLand</h1>
+              <RiShoppingBag4Fill size={25} className="mb-2" />
             </Link>
             <NavMenuDesktop />
           </div>

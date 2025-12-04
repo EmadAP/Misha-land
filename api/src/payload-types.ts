@@ -63,15 +63,19 @@ export type SupportedTimezones =
 
 export interface Config {
   auth: {
+    admins: AdminAuthOperations;
     users: UserAuthOperations;
   };
   blocks: {};
   collections: {
+    admins: Admin;
     users: User;
     media: Media;
     cart: Cart;
     categories: Category;
-    products: Product;
+    accessories: Accessory;
+    'men-clothing': MenClothing;
+    'women-clothing': WomenClothing;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -79,11 +83,14 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
+    admins: AdminsSelect<false> | AdminsSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     cart: CartSelect<false> | CartSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
-    products: ProductsSelect<false> | ProductsSelect<true>;
+    accessories: AccessoriesSelect<false> | AccessoriesSelect<true>;
+    'men-clothing': MenClothingSelect<false> | MenClothingSelect<true>;
+    'women-clothing': WomenClothingSelect<false> | WomenClothingSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -96,12 +103,34 @@ export interface Config {
   globals: {};
   globalsSelect: {};
   locale: null;
-  user: User & {
-    collection: 'users';
-  };
+  user:
+    | (Admin & {
+        collection: 'admins';
+      })
+    | (User & {
+        collection: 'users';
+      });
   jobs: {
     tasks: unknown;
     workflows: unknown;
+  };
+}
+export interface AdminAuthOperations {
+  forgotPassword: {
+    email: string;
+    password: string;
+  };
+  login: {
+    email: string;
+    password: string;
+  };
+  registerFirstUser: {
+    email: string;
+    password: string;
+  };
+  unlock: {
+    email: string;
+    password: string;
   };
 }
 export interface UserAuthOperations {
@@ -121,6 +150,31 @@ export interface UserAuthOperations {
     email: string;
     password: string;
   };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "admins".
+ */
+export interface Admin {
+  id: string;
+  role?: 'admin' | null;
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -174,7 +228,19 @@ export interface Cart {
   userId: string;
   items?:
     | {
-        product: string | Product;
+        product:
+          | {
+              relationTo: 'women-clothing';
+              value: string | WomenClothing;
+            }
+          | {
+              relationTo: 'men-clothing';
+              value: string | MenClothing;
+            }
+          | {
+              relationTo: 'accessories';
+              value: string | Accessory;
+            };
         price: number;
         quantity: number;
         lineTotal?: number | null;
@@ -187,11 +253,10 @@ export interface Cart {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "products".
+ * via the `definition` "women-clothing".
  */
-export interface Product {
+export interface WomenClothing {
   id: string;
-  type: 'clothing' | 'accessory';
   title: string;
   image: string | Media;
   description?: string | null;
@@ -199,7 +264,7 @@ export interface Product {
   onSale?: boolean | null;
   discount?: number | null;
   size?: ('sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl')[] | null;
-  color: ('black' | 'white' | 'red' | 'green' | 'blue' | 'yellow' | 'orange' | 'brown')[];
+  subType: 'blouse' | 'dress' | 'hoodie' | 'cardigan' | 'jacket' | 'skirt' | 'leggings' | 'jeans';
   quantity: number;
   categories: (string | Category)[];
   updatedAt: string;
@@ -213,8 +278,44 @@ export interface Category {
   id: string;
   name: string;
   slug: string;
-  gender: 'men' | 'women';
-  season: ('spring' | 'summer' | 'fall' | 'winter')[];
+  season: 'spring' | 'summer' | 'fall' | 'winter';
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "men-clothing".
+ */
+export interface MenClothing {
+  id: string;
+  title: string;
+  image: string | Media;
+  description?: string | null;
+  price: number;
+  onSale?: boolean | null;
+  discount?: number | null;
+  size?: ('sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'xxxl')[] | null;
+  subType: 'tshirt' | 'shirt' | 'hoodie' | 'sweater' | 'jacket' | 'shorts' | 'chino_pants' | 'jeans';
+  quantity: number;
+  categories: (string | Category)[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "accessories".
+ */
+export interface Accessory {
+  id: string;
+  title: string;
+  image: string | Media;
+  description?: string | null;
+  price: number;
+  onSale?: boolean | null;
+  discount?: number | null;
+  subType: 'bag' | 'shoes' | 'hat' | 'umbrella' | 'scarf' | 'watch' | 'gloves' | 'gift_set';
+  quantity: number;
+  categories: (string | Category)[];
   updatedAt: string;
   createdAt: string;
 }
@@ -243,6 +344,10 @@ export interface PayloadLockedDocument {
   id: string;
   document?:
     | ({
+        relationTo: 'admins';
+        value: string | Admin;
+      } | null)
+    | ({
         relationTo: 'users';
         value: string | User;
       } | null)
@@ -259,14 +364,27 @@ export interface PayloadLockedDocument {
         value: string | Category;
       } | null)
     | ({
-        relationTo: 'products';
-        value: string | Product;
+        relationTo: 'accessories';
+        value: string | Accessory;
+      } | null)
+    | ({
+        relationTo: 'men-clothing';
+        value: string | MenClothing;
+      } | null)
+    | ({
+        relationTo: 'women-clothing';
+        value: string | WomenClothing;
       } | null);
   globalSlug?: string | null;
-  user: {
-    relationTo: 'users';
-    value: string | User;
-  };
+  user:
+    | {
+        relationTo: 'admins';
+        value: string | Admin;
+      }
+    | {
+        relationTo: 'users';
+        value: string | User;
+      };
   updatedAt: string;
   createdAt: string;
 }
@@ -276,10 +394,15 @@ export interface PayloadLockedDocument {
  */
 export interface PayloadPreference {
   id: string;
-  user: {
-    relationTo: 'users';
-    value: string | User;
-  };
+  user:
+    | {
+        relationTo: 'admins';
+        value: string | Admin;
+      }
+    | {
+        relationTo: 'users';
+        value: string | User;
+      };
   key?: string | null;
   value?:
     | {
@@ -303,6 +426,29 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "admins_select".
+ */
+export interface AdminsSelect<T extends boolean = true> {
+  role?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -370,17 +516,32 @@ export interface CartSelect<T extends boolean = true> {
 export interface CategoriesSelect<T extends boolean = true> {
   name?: T;
   slug?: T;
-  gender?: T;
   season?: T;
   updatedAt?: T;
   createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "products_select".
+ * via the `definition` "accessories_select".
  */
-export interface ProductsSelect<T extends boolean = true> {
-  type?: T;
+export interface AccessoriesSelect<T extends boolean = true> {
+  title?: T;
+  image?: T;
+  description?: T;
+  price?: T;
+  onSale?: T;
+  discount?: T;
+  subType?: T;
+  quantity?: T;
+  categories?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "men-clothing_select".
+ */
+export interface MenClothingSelect<T extends boolean = true> {
   title?: T;
   image?: T;
   description?: T;
@@ -388,7 +549,25 @@ export interface ProductsSelect<T extends boolean = true> {
   onSale?: T;
   discount?: T;
   size?: T;
-  color?: T;
+  subType?: T;
+  quantity?: T;
+  categories?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "women-clothing_select".
+ */
+export interface WomenClothingSelect<T extends boolean = true> {
+  title?: T;
+  image?: T;
+  description?: T;
+  price?: T;
+  onSale?: T;
+  discount?: T;
+  size?: T;
+  subType?: T;
   quantity?: T;
   categories?: T;
   updatedAt?: T;

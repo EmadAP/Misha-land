@@ -1,4 +1,3 @@
-import React from "react";
 import springBannerImg from "@/assets/banner/landing/springCollectionBanner.jpg";
 import summerBannerImg from "@/assets/banner/landing/summerCollectionBanner.jpg";
 import fallBannerImg from "@/assets/banner/landing/fallCollectionBanner.jpg";
@@ -23,17 +22,9 @@ function HomeSeasonCollections() {
         <h1 className="text-4xl font-bold text-center">
           خرید آنلاین لباس مناسب هر فصل
         </h1>
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 
-                      justify-between gap-x-6 gap-y-14 items-center"
-        >
+        <div className="grid grid-cols-2 md:grid-cols-4 justify-between gap-x-6 gap-y-14 items-center">
           {seasonCollection.map((s, i) => (
-            <CollectionCard
-              key={i}
-              image={s.image}
-              title={s.title}
-              href={s.href}
-            />
+            <CollectionCard key={i} image={s.image} title={s.title} />
           ))}
         </div>
         <div className="pt-16 space-y-10">
