@@ -4,18 +4,22 @@ import fallBannerImg from "@/assets/banner/landing/fallCollectionBanner.jpg";
 import winterBannerImg from "@/assets/banner/landing/winterCollectionBanner.jpg";
 import CollectionCard from "@/components/sections/homePageSection/CollectionCard";
 import { IconMP } from "@/components/ui/IconMP";
-import { SeasonCollectionsCarousel } from "@/components/sections/homePageSection/SeasonCollectionsCarousel";
+import { CollectionsCarousel } from "@/components/sections/homePageSection/CollectionsCarousel";
 import AccessoriesCollectionBanner from "@/components/sections/homePageSection/AccessoriesCollectionBanner";
 import MaxWidthWrapper from "@/hooks/MaxWithWrapper";
 import ClothCollectionBanner from "@/components/sections/homePageSection/ClothCollectionBanner";
+import { useState } from "react";
 
 function HomeSeasonCollections() {
+  const [selectedSeason, setSelectedSeason] = useState("پاییزی");
+
   const seasonCollection = [
-    { image: springBannerImg, title: "کالکشن بهاری", href: "#" },
-    { image: summerBannerImg, title: "کالکشن تابستانی", href: "#" },
-    { image: fallBannerImg, title: "کالکشن پاییزی", href: "#" },
-    { image: winterBannerImg, title: "کالکشن زمستانی", href: "#" },
+    { image: springBannerImg, title: "بهاری" },
+    { image: summerBannerImg, title: "تابستانی" },
+    { image: fallBannerImg, title: "پاییزی" },
+    { image: winterBannerImg, title: "زمستانی" },
   ];
+
   return (
     <div className="py-20 ">
       <MaxWidthWrapper className="space-y-10">
@@ -24,21 +28,27 @@ function HomeSeasonCollections() {
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-4 justify-between gap-x-6 gap-y-14 items-center">
           {seasonCollection.map((s, i) => (
-            <CollectionCard key={i} image={s.image} title={s.title} />
+            <CollectionCard
+              key={i}
+              image={s.image}
+              title={s.title}
+              season={selectedSeason}
+              onClick={() => setSelectedSeason(s.title)}
+            />
           ))}
         </div>
         <div className="pt-16 space-y-10">
           <h2 className="text-2xl font-semibold text-center text-shadow-lg tracking-tight text-balance leading-tight!">
             <span className="relative px-2">
-              لباس و اکسسوری های پاییزی مردانه و زنانه
+              لباس و اکسسوری های {selectedSeason} مردانه و زنانه
               <IconMP.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-5  text-accent-30" />
             </span>
           </h2>
-          <SeasonCollectionsCarousel />
-          <AccessoriesCollectionBanner />
-          <SeasonCollectionsCarousel />
-          <ClothCollectionBanner />
-          <SeasonCollectionsCarousel />
+          <CollectionsCarousel season={selectedSeason} />
+          <AccessoriesCollectionBanner season={selectedSeason} />
+          <CollectionsCarousel season={selectedSeason} />
+          <ClothCollectionBanner season={selectedSeason} />
+          <CollectionsCarousel season={selectedSeason} />
         </div>
       </MaxWidthWrapper>
     </div>

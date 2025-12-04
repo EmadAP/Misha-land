@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -11,7 +9,7 @@ import {
 import { Link } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
-export function SeasonCollectionsCarousel() {
+export function CollectionsCarousel({ season }: { season: string }) {
   return (
     <section className="py-10 ">
       <div className="mb-4 flex justify-between items-center ">
@@ -19,7 +17,7 @@ export function SeasonCollectionsCarousel() {
           to="#"
           className="text-xl flex flex-row gap-3 items-center justify-between font-semibold capitalize hover:text-primary-30"
         >
-          پرفروش ترین های پاییزی
+          پرفروش ترین های {season}
           <FaArrowLeftLong />
         </Link>
       </div>
