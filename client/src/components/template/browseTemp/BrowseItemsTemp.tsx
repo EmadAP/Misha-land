@@ -12,7 +12,7 @@ function BrowseItemsTemp() {
   return (
     <div className="flex flex-col items-center justify-between gap-6 w-full">
       <BrowseItemsNav />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-5 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full  gap-5 ">
         {products.map((product) => (
           <ProductItemCard key={product.id} product={product} />
         ))}

@@ -36,6 +36,7 @@ function HomeSeasonCollections() {
     isError,
     error,
   } = useGetProductsByCategory(categoryId);
+  
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error?.message}</div>;
@@ -44,6 +45,7 @@ function HomeSeasonCollections() {
   const menAndWomen = products.filter(
     (p) => p.collection === "men-clothing" || p.collection === "women-clothing"
   );
+  console.log("all products:", products.length);
 
   const accessories = products.filter((p) => p.collection === "accessories");
 

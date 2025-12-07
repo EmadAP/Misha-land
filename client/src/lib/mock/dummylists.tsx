@@ -1,5 +1,37 @@
 import type { ProductItemCardProps } from "../types/type";
 
+import winter1 from "@/assets/banner/landing/winterCollectionBanner.jpg";
+import winter2 from "@/assets/banner/landing/winterCollectionBanner.jpg";
+import winter3 from "@/assets/banner/landing/winterCollectionBanner.jpg";
+import winter4 from "@/assets/banner/landing/winterCollectionBanner.jpg";
+
+import summer1 from "@/assets/banner/landing/summerCollectionBanner.jpg";
+import summer2 from "@/assets/banner/landing/summerCollectionBanner.jpg";
+import summer3 from "@/assets/banner/landing/summerCollectionBanner.jpg";
+import summer4 from "@/assets/banner/landing/summerCollectionBanner.jpg";
+
+import spring1 from "@/assets/banner/landing/springCollectionBanner.jpg";
+import spring2 from "@/assets/banner/landing/springCollectionBanner.jpg";
+import spring3 from "@/assets/banner/landing/springCollectionBanner.jpg";
+import spring4 from "@/assets/banner/landing/springCollectionBanner.jpg";
+
+import fall1 from "@/assets/banner/landing/fallCollectionBanner.jpg";
+import fall2 from "@/assets/banner/landing/fallCollectionBanner.jpg";
+import fall3 from "@/assets/banner/landing/fallCollectionBanner.jpg";
+import fall4 from "@/assets/banner/landing/fallCollectionBanner.jpg";
+
+import springMen from "@/assets/banner/landing/springCollectionBanner.jpg";
+import springWomen from "@/assets/banner/landing/springCollectionBanner.jpg";
+
+import summerMen from "@/assets/banner/landing/summerCollectionBanner.jpg";
+import summerWomen from "@/assets/banner/landing/summerCollectionBanner.jpg";
+
+import fallMen from "@/assets/banner/landing/fallCollectionBanner.jpg";
+import fallWomen from "@/assets/banner/landing/fallCollectionBanner.jpg";
+
+import winterMen from "@/assets/banner/landing/winterCollectionBanner.jpg";
+import winterWomen from "@/assets/banner/landing/winterCollectionBanner.jpg";
+
 export const iranProvinces = [
   "آذربایجان شرقی",
   "آذربایجان غربی",
@@ -68,9 +100,6 @@ export const iranCities: Record<string, string[]> = {
   یزد: ["یزد", "اردکان", "میبد"],
 };
 
-/* --------------------------------------
-      DUMMY DATA
-  --------------------------------------- */
 export const ProductDummyData: ProductItemCardProps[] = [
   {
     id: "1",
@@ -183,3 +212,65 @@ export const ProductDummyData: ProductItemCardProps[] = [
     inStock: true,
   },
 ];
+
+export interface AccessoryItem {
+  image: string;
+  label: string;
+}
+
+export const accessoriesData: Record<string, AccessoryItem[]> = {
+  بهاری: [
+    { image: spring1, label: "کلاه بهاری" },
+    { image: spring2, label: "شال نازک بهاری" },
+    { image: spring3, label: "عینک آفتابی" },
+    { image: spring4, label: "کیف سبک بهاری" },
+  ],
+
+  تابستانی: [
+    { image: summer1, label: "کلاه آفتابی" },
+    { image: summer2, label: "عینک تابستانی" },
+    { image: summer3, label: "کیف ساحلی" },
+    { image: summer4, label: "روسری خنک" },
+  ],
+
+  پاییزی: [
+    { image: fall1, label: "کلاه پاییزی" },
+    { image: fall2, label: "شالگردن نازک" },
+    { image: fall3, label: "کیف چرمی" },
+    { image: fall4, label: "دستکش پاییزی" },
+  ],
+
+  زمستانی: [
+    { image: winter1, label: "کلاه پشمی" },
+    { image: winter2, label: "شالگردن ضخیم" },
+    { image: winter3, label: "دستکش زمستانی" },
+    { image: winter4, label: "گوش‌گیر" },
+  ],
+};
+
+export interface ClothSeasonImages {
+  men: string;
+  women: string;
+}
+
+export const clothCollectionData: Record<string, ClothSeasonImages> = {
+  بهاری: {
+    men: springMen,
+    women: springWomen,
+  },
+
+  تابستانی: {
+    men: summerMen,
+    women: summerWomen,
+  },
+
+  پاییزی: {
+    men: fallMen,
+    women: fallWomen,
+  },
+
+  زمستانی: {
+    men: winterMen,
+    women: winterWomen,
+  },
+};
