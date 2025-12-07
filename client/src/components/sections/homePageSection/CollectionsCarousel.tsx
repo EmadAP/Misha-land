@@ -8,8 +8,18 @@ import {
 } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import type { Product } from "@/lib/types/type";
+import ProductItemCard from "../ProductItemCard";
 
-export function CollectionsCarousel({ season }: { season: string }) {
+interface CollectionsCarouselProps {
+  season: string;
+  products: Product[];
+}
+
+export function CollectionsCarousel({
+  season,
+  products,
+}: CollectionsCarouselProps) {
   return (
     <section className="py-10 ">
       <div className="mb-4 flex justify-between items-center ">
@@ -30,14 +40,15 @@ export function CollectionsCarousel({ season }: { season: string }) {
           </div>
 
           <CarouselContent>
-            {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+            {products.map((product) => (
+              <CarouselItem
+                key={product.id}
+                className="md:basis-1/2 lg:basis-1/3"
+              >
                 <div className="p-1">
-                  <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <span className="text-3xl font-semibold">
-                        {index + 1}
-                      </span>
+                  <Card className="p-0">
+                    <CardContent className="aspect-square p-0">
+                      <ProductItemCard product={product} />
                     </CardContent>
                   </Card>
                 </div>

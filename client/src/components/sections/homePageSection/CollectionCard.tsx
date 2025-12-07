@@ -16,7 +16,7 @@ export default function CollectionCard({
   return (
     <button
       onClick={onClick}
-      className="relative w-full min-h-96 rounded-md border-2 border-transparent hover:border-primary-30 "
+      className="relative w-full min-h-96 rounded-md border-2 border-transparent hover:border-primary-30 transition-all duration-200"
     >
       {/* Image + Overlay */}
       <div className="relative w-full min-h-96 overflow-hidden rounded-md">

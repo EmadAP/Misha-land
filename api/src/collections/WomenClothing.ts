@@ -92,4 +92,11 @@ export const WomenClothing: CollectionConfig = {
       required: true,
     },
   ],
+  hooks: {
+    afterRead: [
+      ({ doc }) => {
+        return { ...doc, collection: 'women-clothing' }
+      },
+    ],
+  },
 }

@@ -78,4 +78,11 @@ export const Accessories: CollectionConfig = {
       required: true,
     },
   ],
+  hooks: {
+    afterRead: [
+      ({ doc }) => {
+        return { ...doc, collection: 'accessories' }
+      },
+    ],
+  },
 }

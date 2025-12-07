@@ -8,6 +8,7 @@ import {
   GetAllWomenClothingFc,
   GetCategoriesByIdFc,
   GetMenClothingByIdFc,
+  GetProductsByCategoryFc,
   GetWomenClothingByIdFc,
 } from "../api";
 import type {
@@ -89,6 +90,13 @@ export const useGetCategoriesById = (id: string) => {
   });
 };
 
+export const useGetProductsByCategory = (categoryId?: string) => {
+  return useQuery<Product[], Error>({
+    queryKey: ["ProductByCategory", categoryId],
+    queryFn: () => GetProductsByCategoryFc(categoryId!),
+    enabled: !!categoryId,
+  });
+};
 // export const GetEventById = (id: string) => {
 //   return useQuery<Event, Error>({
 //     queryKey: ["EventById", id],
