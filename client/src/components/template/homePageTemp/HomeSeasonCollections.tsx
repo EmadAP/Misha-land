@@ -9,9 +9,45 @@ import AccessoriesCollectionBanner from "@/components/sections/homePageSection/A
 import MaxWidthWrapper from "@/hooks/MaxWithWrapper";
 import ClothCollectionBanner from "@/components/sections/homePageSection/ClothCollectionBanner";
 import { useState } from "react";
+import {
+  useGetAllCategories,
+  useGetProductsByCategory,
+} from "@/lib/api/client/queries";
 
 function HomeSeasonCollections() {
   const [selectedSeason, setSelectedSeason] = useState("پاییزی");
+
+  const seasonMap: Record<string, string> = {
+    بهاری: "spring",
+    تابستانی: "summer",
+    پاییزی: "fall",
+    زمستانی: "winter",
+  };
+
+  const { data: allCategories } = useGetAllCategories();
+  const categorySlug = seasonMap[selectedSeason];
+
+  const categoryId =
+    allCategories?.find((cat) => cat.slug === categorySlug)?.id || undefined;
+
+  const {
+    data: products,
+    isLoading,
+    isError,
+    error,
+  } = useGetProductsByCategory(categoryId);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error: {error?.message}</div>;
+  if (!products) return <div>No products returned</div>;
+
+  const menAndWomen = products.filter(
+    (p) => p.collection === "men-clothing" || p.collection === "women-clothing"
+  );
+
+  const accessories = products.filter((p) => p.collection === "accessories");
+
+  const allSeasonProducts = products;
 
   const seasonCollection = [
     { image: springBannerImg, title: "بهاری" },
@@ -19,7 +55,6 @@ function HomeSeasonCollections() {
     { image: fallBannerImg, title: "پاییزی" },
     { image: winterBannerImg, title: "زمستانی" },
   ];
-
   return (
     <div className="py-20 ">
       <MaxWidthWrapper className="space-y-10">
@@ -44,11 +79,14 @@ function HomeSeasonCollections() {
               <IconMP.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-5  text-accent-30" />
             </span>
           </h2>
-          <CollectionsCarousel season={selectedSeason} />
+          <CollectionsCarousel season={selectedSeason} products={menAndWomen} />
           <AccessoriesCollectionBanner season={selectedSeason} />
-          <CollectionsCarousel season={selectedSeason} />
+          <CollectionsCarousel season={selectedSeason} products={accessories} />
           <ClothCollectionBanner season={selectedSeason} />
-          <CollectionsCarousel season={selectedSeason} />
+          <CollectionsCarousel
+            season={selectedSeason}
+            products={allSeasonProducts}
+          />
         </div>
       </MaxWidthWrapper>
     </div>

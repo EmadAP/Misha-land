@@ -48,6 +48,13 @@ export const GetCategoriesByIdFc = async (id: string) => {
   return res.data.docs;
 };
 
+export const GetProductsByCategoryFc = async (categoryId: string) => {
+  const res = await api.get(
+    `/api/products?where[categories][in]=${categoryId}`
+  );
+  return res.data.docs;
+};
+
 // export const CreatePendingTicketsFc = async (
 //   items: {
 //     eventId: string;

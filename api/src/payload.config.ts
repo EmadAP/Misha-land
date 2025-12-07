@@ -14,6 +14,7 @@ import { Accessories } from './collections/Accessories'
 import { MenClothing } from './collections/MenClothing'
 import { WomenClothing } from './collections/WomenClothing'
 import { Admins } from './collections/Admins'
+import { productEndpoints } from './endpoints/products'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -42,4 +43,5 @@ export default buildConfig({
   plugins: [
     // storage-adapter-placeholder
   ],
+  endpoints: [productEndpoints],
 })

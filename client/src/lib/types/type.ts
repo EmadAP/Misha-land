@@ -34,6 +34,8 @@ export interface Category extends BaseDoc {
   season: Season;
 }
 
+export type CollectionType = "men-clothing" | "women-clothing" | "accessories";
+
 export type BaseProduct = {
   id: string;
   title: string;
@@ -44,6 +46,7 @@ export type BaseProduct = {
   quantity: number;
   image: Media | string;
   categories: string[] | Category[];
+  collection: CollectionType;
 };
 
 export type ProductSize = "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
