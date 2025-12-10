@@ -46,10 +46,10 @@ const DetailRecommendationTemp = ({ product }: Props) => {
       </div>
 
       <div className="relative py-3">
-        <Carousel opts={{ align: "start" }} className="w-full" dir="rtl">
+        <Carousel opts={{ align: "start" }} className="w-full" dir="ltr">
           <div className="absolute -top-13 left-1 mt-2 z-10 flex gap-4">
-            <CarouselNext className="transition-all duration-200 static w-auto h-auto p-2 border-0 bg-primary-30 text-white hover:text-primary-30 cursor-pointer" />
             <CarouselPrevious className="transition-all duration-200 static w-auto h-auto p-2 border-0 bg-primary-30 text-white hover:text-primary-30 cursor-pointer" />
+            <CarouselNext className="transition-all duration-200 static w-auto h-auto p-2 border-0 bg-primary-30 text-white hover:text-primary-30 cursor-pointer" />
           </div>
           <CarouselContent>
             {preview.map((product) => (
