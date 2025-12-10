@@ -11,6 +11,7 @@ import AddressesPage from "./app/pages/protectedPages/AddressesPage";
 import AccountDetailsPage from "./app/pages/protectedPages/AccountDetailsPage";
 import WishlistPage from "./app/pages/protectedPages/WishlistPage";
 import BrowsePage from "./app/pages/other/BrowsePage";
+import DetailsPage from "./app/pages/other/DetailsPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route element={<PublicLayout />}>
         <Route index element={<HomePage />} />
         <Route path="/browse" element={<BrowsePage />} />
+        <Route path="/product/:collection/:id" element={<DetailsPage />} />
       </Route>
       <Route element={<AuthLayout />}>
         <Route

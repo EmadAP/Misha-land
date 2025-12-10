@@ -1,4 +1,3 @@
-import React from "react";
 import menBannerImg from "@/assets/banner/landing/menMainBanner2.jpg";
 import womenBannerImg from "@/assets/banner/landing/womanMainBanner2.jpg";
 import { FaArrowLeftLong } from "react-icons/fa6";

@@ -1,3 +1,4 @@
+import ProductItemCard from "@/components/sections/ProductItemCard";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -6,27 +7,32 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Link } from "react-router-dom";
+import { useGetAllProducts } from "@/lib/api/client/queries";
+import { collectionFa, type Product } from "@/lib/types/type";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import type { Product } from "@/lib/types/type";
-import ProductItemCard from "../ProductItemCard";
+import { Link } from "react-router-dom";
 
-interface CollectionsCarouselProps {
-  season: string;
-  products: Product[];
-}
+type Props = {
+  product: Product;
+};
 
 function getRandomItems<T>(arr: T[], count: number): T[] {
   const shuffled = [...arr].sort(() => Math.random() - 0.5);
   return shuffled.slice(0, count);
 }
 
-export function CollectionsCarousel({
-  season,
-  products,
-}: CollectionsCarouselProps) {
-  const preview = getRandomItems(products, 5);
+const DetailRecommendationTemp = ({ product }: Props) => {
+  const { data: allProducts, isLoading, isError, error } = useGetAllProducts();
 
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error: {error?.message}</div>;
+  if (!allProducts) return <div>No products returned</div>;
+
+  const products = allProducts.filter(
+    (p) => p.collection === product.collection
+  );
+
+  const preview = getRandomItems(products, 5);
   return (
     <section className="py-10 ">
       <div className="mb-4 flex justify-between items-center ">
@@ -34,7 +40,7 @@ export function CollectionsCarousel({
           to="#"
           className="text-xl flex flex-row gap-3 items-center justify-between font-semibold capitalize hover:text-primary-30"
         >
-          پرفروش ترین های {season}
+          پرفروش‌ترین‌های {collectionFa[product.collection]}
           <FaArrowLeftLong />
         </Link>
       </div>
@@ -65,4 +71,6 @@ export function CollectionsCarousel({
       </div>
     </section>
   );
-}
+};
+
+export default DetailRecommendationTemp;

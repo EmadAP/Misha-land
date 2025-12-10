@@ -29,6 +29,10 @@ export const Accessories: CollectionConfig = {
       type: 'textarea',
     },
     {
+      name: 'info',
+      type: 'textarea',
+    },
+    {
       name: 'price',
       type: 'number',
       required: true,
@@ -47,6 +51,36 @@ export const Accessories: CollectionConfig = {
       admin: {
         condition: (data) => data?.onSale === true,
       },
+    },
+    {
+      name: 'size',
+      type: 'select',
+      hasMany: true,
+      required: true,
+      options: [
+        { label: 'SM', value: 'sm' },
+        { label: 'MD', value: 'md' },
+        { label: 'LG', value: 'lg' },
+        { label: 'XL', value: 'xl' },
+        { label: '2XL', value: 'xxl' },
+        { label: '3XL', value: 'xxxl' },
+      ],
+    },
+    {
+      name: 'color',
+      type: 'select',
+      hasMany: true,
+      required: true,
+      options: [
+        { label: 'Red', value: 'قرمز' },
+        { label: 'White', value: 'سفید' },
+        { label: 'Black', value: 'مشکی' },
+        { label: 'Brown', value: 'قهوه ای' },
+        { label: 'Green', value: 'سبز' },
+        { label: 'Blue', value: 'آبی' },
+        { label: 'Yellow', value: 'زرد' },
+        { label: 'Gray', value: 'طوسی' },
+      ],
     },
     {
       name: 'subType',

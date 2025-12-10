@@ -30,6 +30,10 @@ export const MenClothing: CollectionConfig = {
       type: 'textarea',
     },
     {
+      name: 'info',
+      type: 'textarea',
+    },
+    {
       name: 'price',
       type: 'number',
       required: true,
@@ -50,9 +54,26 @@ export const MenClothing: CollectionConfig = {
       },
     },
     {
+      name: 'color',
+      type: 'select',
+      hasMany: true,
+      required: true,
+      options: [
+        { label: 'Red', value: 'قرمز' },
+        { label: 'White', value: 'سفید' },
+        { label: 'Black', value: 'مشکی' },
+        { label: 'Brown', value: 'قهوه ای' },
+        { label: 'Green', value: 'سبز' },
+        { label: 'Blue', value: 'آبی' },
+        { label: 'Yellow', value: 'زرد' },
+        { label: 'Gray', value: 'طوسی' },
+      ],
+    },
+    {
       name: 'size',
       type: 'select',
       hasMany: true,
+      required: true,
       options: [
         { label: 'SM', value: 'sm' },
         { label: 'MD', value: 'md' },

@@ -1,4 +1,5 @@
 import axios from "axios";
+import type { CollectionType } from "../types/type";
 
 const api = axios.create({
   baseURL: "http://localhost:3000",
@@ -15,7 +16,7 @@ export const GetAllAccessoriesFc = async () => {
 
 export const GetAccessoriesByIdFc = async (id: string) => {
   const res = await api.get(`/api/accessories/${id}`);
-  return res.data.docs;
+  return res.data.doc;
 };
 
 export const GetAllMenClothingFc = async () => {
@@ -25,7 +26,7 @@ export const GetAllMenClothingFc = async () => {
 
 export const GetMenClothingByIdFc = async (id: string) => {
   const res = await api.get(`/api/men-clothing/${id}`);
-  return res.data.docs;
+  return res.data.doc;
 };
 
 export const GetAllWomenClothingFc = async () => {
@@ -35,7 +36,7 @@ export const GetAllWomenClothingFc = async () => {
 
 export const GetWomenClothingByIdFc = async (id: string) => {
   const res = await api.get(`/api/women-clothing/${id}`);
-  return res.data.docs;
+  return res.data.doc;
 };
 
 export const GetAllCategoriesFc = async () => {
@@ -45,7 +46,7 @@ export const GetAllCategoriesFc = async () => {
 
 export const GetCategoriesByIdFc = async (id: string) => {
   const res = await api.get(`/api/categories/${id}`);
-  return res.data.docs;
+  return res.data.doc;
 };
 
 export const GetProductsByCategoryFc = async (categoryId: string) => {
@@ -55,62 +56,10 @@ export const GetProductsByCategoryFc = async (categoryId: string) => {
   return res.data.docs;
 };
 
-// export const CreatePendingTicketsFc = async (
-//   items: {
-//     eventId: string;
-//     sectionId: string;
-//     quantity: number;
-//   }[]
-// ) => {
-//   const res = await api.post(
-//     "/api/tickets/checkout",
-//     { items },
-//     { withCredentials: true }
-//   );
-//   return res.data;
-// };
-
-// // Fetch cart
-// export const GetCartFc = async () => {
-//   const res = await api.get("/api/cart", { withCredentials: true });
-//   return res.data;
-// };
-
-// // Add item
-// export const AddToCartFc = async (payload: {
-//   eventId: string;
-//   sectionId: string;
-//   total: number;
-// }) => {
-//   const res = await api.post("/api/cart/add", payload, {
-//     withCredentials: true,
-//   });
-//   return res.data;
-// };
-
-// // Update item
-// export const UpdateCartItemFc = async (payload: {
-//   sectionId: string;
-//   total: number;
-// }) => {
-//   const res = await api.put(
-//     `/api/cart/update/${payload.sectionId}`,
-//     { total: payload.total },
-//     { withCredentials: true }
-//   );
-//   return res.data;
-// };
-
-// // Remove item
-// export const RemoveFromCartFc = async (sectionId: string) => {
-//   const res = await api.delete(`/api/cart/remove/${sectionId}`, {
-//     withCredentials: true,
-//   });
-//   return res.data;
-// };
-
-// // Clear cart
-// export const ClearCartFc = async () => {
-//   const res = await api.delete("/api/cart/clear", { withCredentials: true });
-//   return res.data;
-// };
+export const GetProductByCollectionAndIdFc = async (
+  collection: CollectionType,
+  id: string
+) => {
+  const res = await api.get(`/api/${collection}/${id}`);
+  return res.data;
+};
