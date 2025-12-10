@@ -36,22 +36,41 @@ export interface Category extends BaseDoc {
 
 export type CollectionType = "men-clothing" | "women-clothing" | "accessories";
 
+export const collectionFa: Record<CollectionType, string> = {
+  "men-clothing": "لباس مردانه",
+  "women-clothing": "لباس زنانه",
+  accessories: "اکسسوری",
+};
+
+export type ProductSize = "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+
+export type ProductColor =
+  | "قرمز"
+  | "سفید"
+  | "مشکی"
+  | "قهوه ای"
+  | "سبز"
+  | "آبی"
+  | "زرد"
+  | "طوسی";
+
 export type BaseProduct = {
   id: string;
   title: string;
   description?: string;
+  info?: string;
   price: number;
   onSale: boolean;
   discount?: number;
   quantity: number;
+  size: ProductSize[];
+  color: ProductColor[];
   image: Media | string;
   categories: string[] | Category[];
   collection: CollectionType;
 };
 
-export type ProductSize = "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
 export interface MenClothing extends BaseProduct {
-  size: ProductSize[];
   subType:
     | "tshirt"
     | "shirt"
@@ -64,7 +83,6 @@ export interface MenClothing extends BaseProduct {
 }
 
 export interface WomenClothing extends BaseProduct {
-  size: ProductSize[];
   subType:
     | "blouse"
     | "dress"

@@ -2,7 +2,6 @@ import TestimonialsAboutSection from "@/components/sections/homePageSection/Test
 import TestimonialsBanner from "@/components/sections/homePageSection/TestimonialsBanner";
 import { TestimonialsFaq } from "@/components/sections/homePageSection/TestimonialsFaq";
 import MaxWidthWrapper from "@/hooks/MaxWithWrapper";
-import React from "react";
 
 function HomeTestimonials() {
   return (
