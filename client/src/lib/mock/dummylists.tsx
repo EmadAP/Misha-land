@@ -1,24 +1,24 @@
 import type { ProductItemCardProps } from "../types/type";
 
-import winter1 from "@/assets/banner/landing/winterCollectionBanner.jpg";
-import winter2 from "@/assets/banner/landing/winterCollectionBanner.jpg";
-import winter3 from "@/assets/banner/landing/winterCollectionBanner.jpg";
-import winter4 from "@/assets/banner/landing/winterCollectionBanner.jpg";
+import winter1 from "@/assets/banner/seasonItems/winter/winter-Earplugs.jpg";
+import winter2 from "@/assets/banner/seasonItems/winter/winter-glove.jpg";
+import winter3 from "@/assets/banner/seasonItems/winter/winter-hat.jpg";
+import winter4 from "@/assets/banner/seasonItems/winter/winter-scarf.jpg";
 
-import summer1 from "@/assets/banner/landing/summerCollectionBanner.jpg";
-import summer2 from "@/assets/banner/landing/summerCollectionBanner.jpg";
-import summer3 from "@/assets/banner/landing/summerCollectionBanner.jpg";
-import summer4 from "@/assets/banner/landing/summerCollectionBanner.jpg";
+import summer1 from "@/assets/banner/seasonItems/summer/summer-bag.jpg";
+import summer2 from "@/assets/banner/seasonItems/summer/summer-hat.jpg";
+import summer3 from "@/assets/banner/seasonItems/summer/summer-scarf.jpg";
+import summer4 from "@/assets/banner/seasonItems/summer/summer-sunglasses.jpg";
 
-import spring1 from "@/assets/banner/landing/springCollectionBanner.jpg";
-import spring2 from "@/assets/banner/landing/springCollectionBanner.jpg";
-import spring3 from "@/assets/banner/landing/springCollectionBanner.jpg";
-import spring4 from "@/assets/banner/landing/springCollectionBanner.jpg";
+import spring1 from "@/assets/banner/seasonItems/spring/spring-bag.jpg";
+import spring2 from "@/assets/banner/seasonItems/spring/spring-hat.jpg";
+import spring3 from "@/assets/banner/seasonItems/spring/spring-sunglasses.jpg";
+import spring4 from "@/assets/banner/seasonItems/spring/spring-thinScarf.jpg";
 
-import fall1 from "@/assets/banner/landing/fallCollectionBanner.jpg";
-import fall2 from "@/assets/banner/landing/fallCollectionBanner.jpg";
-import fall3 from "@/assets/banner/landing/fallCollectionBanner.jpg";
-import fall4 from "@/assets/banner/landing/fallCollectionBanner.jpg";
+import fall1 from "@/assets/banner/seasonItems/fall/fall-gloves.jpg";
+import fall2 from "@/assets/banner/seasonItems/fall/fall-scarf.jpg";
+import fall3 from "@/assets/banner/seasonItems/fall/fall-umbrella.jpg";
+import fall4 from "@/assets/banner/seasonItems/fall/fall-watch.jpg";
 
 import springMen from "@/assets/banner/landing/springCollectionBanner.jpg";
 import springWomen from "@/assets/banner/landing/springCollectionBanner.jpg";
@@ -220,10 +220,10 @@ export interface AccessoryItem {
 
 export const accessoriesData: Record<string, AccessoryItem[]> = {
   بهاری: [
-    { image: spring1, label: "کلاه بهاری" },
-    { image: spring2, label: "شال نازک بهاری" },
+    { image: spring1, label: "کلاه" },
+    { image: spring2, label: "شال نازک" },
     { image: spring3, label: "عینک آفتابی" },
-    { image: spring4, label: "کیف سبک بهاری" },
+    { image: spring4, label: "کیف سبک" },
   ],
 
   تابستانی: [
@@ -234,16 +234,16 @@ export const accessoriesData: Record<string, AccessoryItem[]> = {
   ],
 
   پاییزی: [
-    { image: fall1, label: "کلاه پاییزی" },
-    { image: fall2, label: "شالگردن نازک" },
-    { image: fall3, label: "کیف چرمی" },
-    { image: fall4, label: "دستکش پاییزی" },
+    { image: fall1, label: "چتر" },
+    { image: fall2, label: "شالگردن" },
+    { image: fall3, label: "ساعت" },
+    { image: fall4, label: "دستکش چرمی" },
   ],
 
   زمستانی: [
     { image: winter1, label: "کلاه پشمی" },
     { image: winter2, label: "شالگردن ضخیم" },
-    { image: winter3, label: "دستکش زمستانی" },
+    { image: winter3, label: "دستکش پشمی" },
     { image: winter4, label: "گوش‌گیر" },
   ],
 };

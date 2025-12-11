@@ -130,3 +130,10 @@ export interface Cart extends BaseDoc {
   items: CartItem[];
   total: number;
 }
+
+export const seasonMap: Record<string, string> = {
+  بهاری: "spring",
+  تابستانی: "summer",
+  پاییزی: "fall",
+  زمستانی: "winter",
+};
