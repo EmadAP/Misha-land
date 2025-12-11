@@ -12,7 +12,8 @@ import type { Product } from "@/lib/types/type";
 import ProductItemCard from "../ProductItemCard";
 
 interface CollectionsCarouselProps {
-  season: string;
+  title: string;
+  link: string;
   products: Product[];
 }
 
@@ -22,7 +23,8 @@ function getRandomItems<T>(arr: T[], count: number): T[] {
 }
 
 export function CollectionsCarousel({
-  season,
+  title,
+  link,
   products,
 }: CollectionsCarouselProps) {
   const preview = getRandomItems(products, 5);
@@ -31,10 +33,10 @@ export function CollectionsCarousel({
     <section className="py-10 ">
       <div className="mb-4 flex justify-between items-center ">
         <Link
-          to="#"
+          to={link}
           className="text-xl flex flex-row gap-3 items-center justify-between font-semibold capitalize hover:text-primary-30"
         >
-          پرفروش ترین های {season}
+          {title}
           <FaArrowLeftLong />
         </Link>
       </div>
@@ -50,6 +52,7 @@ export function CollectionsCarousel({
               <CarouselItem
                 key={product.id}
                 className="md:basis-1/2 lg:basis-1/3"
+                dir="rtl"
               >
                 <div className="p-1">
                   <Card className="p-0">

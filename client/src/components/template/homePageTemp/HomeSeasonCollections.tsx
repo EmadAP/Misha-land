@@ -13,16 +13,10 @@ import {
   useGetAllCategories,
   useGetProductsByCategory,
 } from "@/lib/api/client/queries";
+import { seasonMap } from "@/lib/types/type";
 
 function HomeSeasonCollections() {
   const [selectedSeason, setSelectedSeason] = useState("پاییزی");
-
-  const seasonMap: Record<string, string> = {
-    بهاری: "spring",
-    تابستانی: "summer",
-    پاییزی: "fall",
-    زمستانی: "winter",
-  };
 
   const { data: allCategories } = useGetAllCategories();
   const categorySlug = seasonMap[selectedSeason];
@@ -36,7 +30,6 @@ function HomeSeasonCollections() {
     isError,
     error,
   } = useGetProductsByCategory(categoryId);
-  
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error?.message}</div>;
@@ -45,7 +38,6 @@ function HomeSeasonCollections() {
   const menAndWomen = products.filter(
     (p) => p.collection === "men-clothing" || p.collection === "women-clothing"
   );
-  console.log("all products:", products.length);
 
   const accessories = products.filter((p) => p.collection === "accessories");
 
@@ -57,6 +49,8 @@ function HomeSeasonCollections() {
     { image: fallBannerImg, title: "پاییزی" },
     { image: winterBannerImg, title: "زمستانی" },
   ];
+  const enSeason = seasonMap[selectedSeason];
+
   return (
     <div className="py-20 ">
       <MaxWidthWrapper className="space-y-10">
@@ -81,12 +75,21 @@ function HomeSeasonCollections() {
               <IconMP.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-5  text-accent-30" />
             </span>
           </h2>
-          <CollectionsCarousel season={selectedSeason} products={menAndWomen} />
+          <CollectionsCarousel
+            title={`پرفروش ترین های ${selectedSeason}`}
+            link={`/browse?season=${enSeason}&type=clothe`}
+            products={menAndWomen}
+          />
           <AccessoriesCollectionBanner season={selectedSeason} />
-          <CollectionsCarousel season={selectedSeason} products={accessories} />
+          <CollectionsCarousel
+            title={`برترین اکسسوری های ${selectedSeason}`}
+            link={`/browse?season=${enSeason}&type=accessories`}
+            products={accessories}
+          />
           <ClothCollectionBanner season={selectedSeason} />
           <CollectionsCarousel
-            season={selectedSeason}
+            title={`تخفیف های ${selectedSeason}`}
+            link={`/browse?season=${enSeason}&type=onSale`}
             products={allSeasonProducts}
           />
         </div>

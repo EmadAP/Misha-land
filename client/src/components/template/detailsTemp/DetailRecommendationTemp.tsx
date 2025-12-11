@@ -56,6 +56,7 @@ const DetailRecommendationTemp = ({ product }: Props) => {
               <CarouselItem
                 key={product.id}
                 className="md:basis-1/2 lg:basis-1/3"
+                dir="rtl"
               >
                 <div className="p-1">
                   <Card className="p-0">

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { accessoriesData } from "@/lib/mock/dummylists";
+import { seasonMap } from "@/lib/types/type";
 
 function AccessoriesCollectionBanner({ season }: { season: string }) {
   const items = accessoriesData[season] || [];
@@ -11,8 +12,10 @@ function AccessoriesCollectionBanner({ season }: { season: string }) {
     .join("، ")
     .replace(/،([^،]*)$/, " و$1");
 
+  const enSeason = seasonMap[season];
+
   return (
-    <Link to="#">
+    <Link to={`/browse?season=${enSeason}&type=accessories`}>
       <div className="flex flex-col lg:flex-row items-center justify-between gap-y-6 gap-x-28 max-w-screen-xl mx-auto mb-10">
         <div className="flex flex-col gap-2 items-start md:w-full lg:w-fit">
           <h2 className="text-xl font-semibold">اکسسوری‌ های {season}</h2>
@@ -27,7 +30,7 @@ function AccessoriesCollectionBanner({ season }: { season: string }) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-between md:w-full text-center">
           {items.map((item, i) => (
             <div key={i} className="flex flex-col items-center gap-3">
-              <div className="relative w-32 h-32 overflow-hidden rounded-full mx-auto">
+              <div className="relative w-32 h-32 bg-primary-10 overflow-hidden rounded-full mx-auto">
                 <img
                   src={item.image}
                   alt={item.label}
