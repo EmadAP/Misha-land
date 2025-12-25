@@ -15,6 +15,7 @@ function BrowseItemsTemp() {
   const genderFilter = searchParams.get("gender");
   const seasonFilter = searchParams.get("season");
   const typeFilter = searchParams.get("type");
+  const subTypeFilter = searchParams.get("subType");
 
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: {error?.message}</div>;
@@ -54,6 +55,10 @@ function BrowseItemsTemp() {
 
   if (typeFilter === "onSale") {
     filtered = filtered.filter((p) => p.onSale === true);
+  }
+
+  if (subTypeFilter) {
+    filtered = filtered.filter((p) => p.subType === subTypeFilter);
   }
 
   return (

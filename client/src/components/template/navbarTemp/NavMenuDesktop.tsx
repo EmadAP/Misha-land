@@ -12,18 +12,13 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
+import {
+  navAccessoryItems,
+  navMenItems,
+  navWomenItems,
+} from "@/lib/mock/dummylists";
 
 export function NavMenuDesktop() {
-  const commonItems = [
-    "تی‌شرت",
-    "پیراهن",
-    "هودی / سویشرت",
-    "پلیور / بافت",
-    "کت و شلوار",
-    "شلوار کتان",
-    "شلوار جین",
-  ];
-
   return (
     <NavigationMenu dir="rtl" className="hidden md:flex">
       <NavigationMenuList className="flex-wrap">
@@ -33,7 +28,11 @@ export function NavMenuDesktop() {
             <MegaMenu
               image={menImg}
               columns={[
-                { title: "پوشاک مردانه", items: commonItems, href: "#" },
+                {
+                  title: "پوشاک مردانه",
+                  link: "/browse?gender=men",
+                  items: navMenItems,
+                },
               ]}
             />
           </NavigationMenuContent>
@@ -45,7 +44,11 @@ export function NavMenuDesktop() {
             <MegaMenu
               image={womenImg}
               columns={[
-                { title: "پوشاک زنانه", items: commonItems, href: "#" },
+                {
+                  title: "پوشاک زنانه",
+                  link: "/browse?gender=women",
+                  items: navWomenItems,
+                },
               ]}
             />
           </NavigationMenuContent>
@@ -59,15 +62,8 @@ export function NavMenuDesktop() {
               columns={[
                 {
                   title: "مردانه و زنانه",
-                  items: [
-                    "کیف",
-                    "کفش",
-                    "کلاه",
-                    "جواهرات",
-                    "شال و روسری",
-                    "ست کادویی",
-                  ],
-                  href: "#",
+                  link: "/browse?type=accessories",
+                  items: navAccessoryItems,
                 },
               ]}
             />
