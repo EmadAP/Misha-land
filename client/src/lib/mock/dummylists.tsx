@@ -32,6 +32,39 @@ import fallWomen from "@/assets/banner/landing/fallCollectionBanner.jpg";
 import winterMen from "@/assets/banner/landing/winterCollectionBanner.jpg";
 import winterWomen from "@/assets/banner/landing/winterCollectionBanner.jpg";
 
+export const navMenItems = [
+  { label: "تی‌شرت", href: "/browse?gender=men&subType=tshirt" },
+  { label: "پیراهن", href: "/browse?gender=men&subType=shirt" },
+  { label: "هودی / سویشرت", href: "/browse?gender=men&subType=hoodie" },
+  { label: "پلیور / بافت", href: "/browse?gender=men&subType=sweater" },
+  { label: "کاپشن", href: "/browse?gender=men&subType=jacket" },
+  { label: "شلوارک", href: "/browse?gender=men&subType=shorts" },
+  { label: "شلوار کتان", href: "/browse?gender=men&subType=chino_pants" },
+  { label: "شلوار جین", href: "/browse?gender=men&subType=jeans" },
+];
+
+export const navWomenItems = [
+  { label: "بلوز", href: "/browse?gender=women&subType=blouse" },
+  { label: "پیراهن", href: "/browse?gender=women&subType=dress" },
+  { label: "هودی / سویشرت", href: "/browse?gender=women&subType=hoodie" },
+  { label: "ژاکت", href: "/browse?gender=women&subType=cardigan" },
+  { label: "کاپشن", href: "/browse?gender=women&subType=jacket" },
+  { label: "دامن", href: "/browse?gender=women&subType=skirt" },
+  { label: "لگ زنانه", href: "/browse?gender=women&subType=leggings" },
+  { label: "شلوار جین", href: "/browse?gender=women&subType=jeans" },
+];
+
+export const navAccessoryItems = [
+  { label: "کیف", href: "/browse?type=accessories&subType=bag" },
+  { label: "کفش", href: "/browse?type=accessories&subType=shoes" },
+  { label: "کلاه", href: "/browse?type=accessories&subType=hat" },
+  { label: "چتر", href: "/browse?type=accessories&subType=umbrella" },
+  { label: "شال / روسری", href: "/browse?type=accessories&subType=scarf" },
+  { label: "ساعت", href: "/browse?type=accessories&subType=watch" },
+  { label: "دستکش", href: "/browse?type=accessories&subType=gloves" },
+  { label: "ست هدیه", href: "/browse?type=accessories&subType=gift_set" },
+];
+
 export const iranProvinces = [
   "آذربایجان شرقی",
   "آذربایجان غربی",

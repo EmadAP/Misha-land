@@ -5,8 +5,11 @@ interface MegaMenuProps {
   image: string;
   columns: {
     title: string;
-    items: string[];
-    href: string;
+    link: string;
+    items: {
+      label: string;
+      href: string;
+    }[];
   }[];
 }
 
@@ -19,8 +22,8 @@ export default function MegaMenu({ image, columns }: MegaMenuProps) {
         <CategoryColumn
           key={col.title}
           title={col.title}
+          link={col.link}
           items={col.items}
-          href={col.href}
         />
       ))}
     </div>
