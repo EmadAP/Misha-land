@@ -19,7 +19,7 @@ export default function CollectionCard({
       className="relative w-full min-h-96 rounded-md border-2 border-transparent hover:border-primary-30 transition-all duration-200"
     >
       {/* Image + Overlay */}
-      <div className="relative w-full min-h-96 overflow-hidden rounded-md">
+      <div className="relative w-full min-h-96 overflow-hidden rounded-sm">
         <img
           src={image}
           alt={title}

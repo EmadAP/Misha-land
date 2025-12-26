@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import PublicLayout from "./app/layout/PublicLayout";
-import HomePage from "./app/pages/HomePage";
+import HomePage from "./app/pages/public/HomePage";
 import AuthLayout from "./app/layout/AuthLayout";
 import { SignIn, SignUp } from "@clerk/clerk-react";
 import ProtectedLayout from "./app/layout/ProtectedLayout";
@@ -10,8 +10,8 @@ import OrdersPage from "./app/pages/protectedPages/OrdersPage";
 import AddressesPage from "./app/pages/protectedPages/AddressesPage";
 import AccountDetailsPage from "./app/pages/protectedPages/AccountDetailsPage";
 import WishlistPage from "./app/pages/protectedPages/WishlistPage";
-import BrowsePage from "./app/pages/other/BrowsePage";
-import DetailsPage from "./app/pages/other/DetailsPage";
+import BrowsePage from "./app/pages/public/BrowsePage";
+import DetailsPage from "./app/pages/public/DetailsPage";
 
 function App() {
   return (
