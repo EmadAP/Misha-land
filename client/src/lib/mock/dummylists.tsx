@@ -32,6 +32,15 @@ import fallWomen from "@/assets/banner/landing/fallCollectionBanner.jpg";
 import winterMen from "@/assets/banner/landing/winterCollectionBanner.jpg";
 import winterWomen from "@/assets/banner/landing/winterCollectionBanner.jpg";
 
+export const footerPages = [
+  { label: "سوالات متداول", href: "/faq" },
+  { label: "چرا میشا لند", href: "/why-mishaland" },
+  { label: "تماس با ما", href: "/contact" },
+  { label: "راهنمای خرید و مقررات", href: "/how-to-buy" },
+  { label: "شرایط گارانتی", href: "/waranty-rules" },
+  { label: "درباره ما", href: "/about-us" },
+];
+
 export const navMenItems = [
   { label: "تی‌شرت", href: "/browse?gender=men&subType=tshirt" },
   { label: "پیراهن", href: "/browse?gender=men&subType=shirt" },
