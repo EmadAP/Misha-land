@@ -31,7 +31,7 @@ export function CollectionsCarousel({
 
   return (
     <section className="py-10 ">
-      <div className="mb-4 flex justify-between items-center ">
+      <div className="mb-4 flex justify-between items-center pr-2">
         <Link
           to={link}
           className="text-xl flex flex-row gap-3 items-center justify-between font-semibold capitalize hover:text-primary-30"

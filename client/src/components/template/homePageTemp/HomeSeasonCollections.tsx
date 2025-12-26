@@ -14,6 +14,7 @@ import {
   useGetProductsByCategory,
 } from "@/lib/api/client/queries";
 import { seasonMap } from "@/lib/types/type";
+import CollectionsCarouselSkeleton from "@/components/skeletons/CollectionsCarouselSkeleton";
 
 function HomeSeasonCollections() {
   const [selectedSeason, setSelectedSeason] = useState("پاییزی");
@@ -28,20 +29,18 @@ function HomeSeasonCollections() {
     data: products,
     isLoading,
     isError,
-    error,
   } = useGetProductsByCategory(categoryId);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error: {error?.message}</div>;
-  if (!products) return <div>No products returned</div>;
+  const menAndWomen =
+    products?.filter(
+      (p) =>
+        p.collection === "men-clothing" || p.collection === "women-clothing"
+    ) ?? [];
 
-  const menAndWomen = products.filter(
-    (p) => p.collection === "men-clothing" || p.collection === "women-clothing"
-  );
+  const accessories =
+    products?.filter((p) => p.collection === "accessories") ?? [];
 
-  const accessories = products.filter((p) => p.collection === "accessories");
-
-  const allSeasonProducts = products;
+  const allSeasonProducts = products ?? [];
 
   const seasonCollection = [
     { image: springBannerImg, title: "بهاری" },
@@ -75,23 +74,51 @@ function HomeSeasonCollections() {
               <IconMP.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-5  text-accent-30" />
             </span>
           </h2>
-          <CollectionsCarousel
-            title={`پرفروش ترین های ${selectedSeason}`}
-            link={`/browse?season=${enSeason}&type=clothe`}
-            products={menAndWomen}
-          />
+          {isError ? (
+            <div className="text-center text-red-500">
+              خطا در دریافت محصولات
+            </div>
+          ) : isLoading || !products ? (
+            <CollectionsCarouselSkeleton />
+          ) : (
+            <CollectionsCarousel
+              title={`پرفروش ترین های ${selectedSeason}`}
+              link={`/browse?season=${enSeason}&type=clothe`}
+              products={menAndWomen}
+            />
+          )}
+
           <AccessoriesCollectionBanner season={selectedSeason} />
-          <CollectionsCarousel
-            title={`برترین اکسسوری های ${selectedSeason}`}
-            link={`/browse?season=${enSeason}&type=accessories`}
-            products={accessories}
-          />
+
+          {isError ? (
+            <div className="text-center text-red-500">
+              خطا در دریافت محصولات
+            </div>
+          ) : isLoading || !products ? (
+            <CollectionsCarouselSkeleton />
+          ) : (
+            <CollectionsCarousel
+              title={`برترین اکسسوری های ${selectedSeason}`}
+              link={`/browse?season=${enSeason}&type=accessories`}
+              products={accessories}
+            />
+          )}
+
           <ClothCollectionBanner season={selectedSeason} />
-          <CollectionsCarousel
-            title={`تخفیف های ${selectedSeason}`}
-            link={`/browse?season=${enSeason}&type=onSale`}
-            products={allSeasonProducts}
-          />
+
+          {isError ? (
+            <div className="text-center text-red-500">
+              خطا در دریافت محصولات
+            </div>
+          ) : isLoading || !products ? (
+            <CollectionsCarouselSkeleton />
+          ) : (
+            <CollectionsCarousel
+              title={`تخفیف های ${selectedSeason}`}
+              link={`/browse?season=${enSeason}&type=onSale`}
+              products={allSeasonProducts}
+            />
+          )}
         </div>
       </MaxWidthWrapper>
     </div>
