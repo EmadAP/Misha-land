@@ -1,5 +1,6 @@
 import ContactCopyableInfo from "@/components/sections/contactPageSection/ContactCopyableInfo";
 import ContactFormField from "@/components/sections/contactPageSection/ContactFormField";
+import OtherPagesTitle from "@/components/sections/OtherPagesTitle";
 import { Button } from "@/components/ui/button";
 import MaxWidthWrapper from "@/hooks/MaxWithWrapper";
 import { useState } from "react";
@@ -21,13 +22,7 @@ function ContactPage() {
     <div className="py-28 md:pt-48">
       <MaxWidthWrapper>
         <div className="flex flex-col gap-20">
-          <div className="flex flex-row gap-3 items-center">
-            <div className="relative flex size-3">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-20"></span>
-              <span className="relative inline-flex size-3 rounded-full bg-accent-30"></span>
-            </div>
-            <h1 className="text-2xl font-semibold">تماس با ما</h1>
-          </div>
+          <OtherPagesTitle title="تماس با ما" />
           <div className="flex flex-col md:flex-row justify-between gap-10">
             <form className="w-full md:w-1/2 xl:w-2/3 flex flex-col items-start justify-between gap-10">
               <ContactFormField
