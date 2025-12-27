@@ -35,7 +35,7 @@ import winterWomen from "@/assets/banner/landing/winterCollectionBanner.jpg";
 export const footerPages = [
   { label: "تماس با ما", href: "/contact" },
   { label: "راهنمای خرید و مقررات", href: "/how-to-buy" },
-  { label: "شرایط گارانتی", href: "/waranty-rules" },
+  { label: "شرایط گارانتی", href: "/warranty-rules" },
   { label: "درباره ما", href: "/about-us" },
 ];
 

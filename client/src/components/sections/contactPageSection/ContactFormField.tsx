@@ -19,7 +19,7 @@ export default function ContactFormField({
       <span className="pr-2">{label}</span>
 
       {type === "textarea" ? (
-        <Textarea id={id} placeholder={placeholder} />
+        <Textarea className="min-h-48" id={id} placeholder={placeholder} />
       ) : (
         <Input id={id} type={type} placeholder={placeholder} />
       )}
