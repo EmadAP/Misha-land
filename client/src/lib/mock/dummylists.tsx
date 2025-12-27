@@ -33,8 +33,6 @@ import winterMen from "@/assets/banner/landing/winterCollectionBanner.jpg";
 import winterWomen from "@/assets/banner/landing/winterCollectionBanner.jpg";
 
 export const footerPages = [
-  { label: "سوالات متداول", href: "/faq" },
-  { label: "چرا میشا لند", href: "/why-mishaland" },
   { label: "تماس با ما", href: "/contact" },
   { label: "راهنمای خرید و مقررات", href: "/how-to-buy" },
   { label: "شرایط گارانتی", href: "/waranty-rules" },

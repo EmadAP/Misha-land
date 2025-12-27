@@ -14,10 +14,8 @@ import BrowsePage from "./app/pages/public/BrowsePage";
 import DetailsPage from "./app/pages/public/DetailsPage";
 import AboutUsPage from "./app/pages/public/AboutUsPage";
 import ContactPage from "./app/pages/public/ContactPage";
-import FaqPage from "./app/pages/public/FaqPage";
 import HowToBuyPage from "./app/pages/public/HowToBuyPage";
 import WarantyRulesPage from "./app/pages/public/WarantyRulesPage";
-import WhyMishaLandPage from "./app/pages/public/WhyMishaLandPage";
 
 function App() {
   return (
@@ -28,10 +26,8 @@ function App() {
         <Route path="/product/:collection/:id" element={<DetailsPage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/faq" element={<FaqPage />} />
         <Route path="/how-to-buy" element={<HowToBuyPage />} />
         <Route path="/waranty-rules" element={<WarantyRulesPage />} />
-        <Route path="/why-mishaland" element={<WhyMishaLandPage />} />
       </Route>
       <Route element={<AuthLayout />}>
         <Route

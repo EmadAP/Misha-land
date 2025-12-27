@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function FooterPages() {
   return (
-    <div className="grid grid-cols-3 lg:grid-cols-6 items-center justify-between gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-4 items-center justify-between gap-6">
       {footerPages.map((page) => (
         <Link
           to={page.href}
