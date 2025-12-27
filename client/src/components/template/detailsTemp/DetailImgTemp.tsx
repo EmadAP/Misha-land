@@ -12,7 +12,7 @@ type Props = {
 const DetailImgTemp = ({ product }: Props) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [isFavarite, setIsFavarite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const handleShare = async () => {
     await navigator.clipboard.writeText(window.location.href);
@@ -73,10 +73,10 @@ const DetailImgTemp = ({ product }: Props) => {
           </Alert>
         )}
         <button
-          onClick={() => setIsFavarite(true)}
+          onClick={() => setIsFavorite(true)}
           className="p-2 rounded-full text-primary-30 bg-background-10 hover:bg-primary-30 hover:text-background-10 transition-all duration-200"
         >
-          {isFavarite ? <GoHeartFill size={20} /> : <GoHeart size={20} />}
+          {isFavorite ? <GoHeartFill size={20} /> : <GoHeart size={20} />}
         </button>
       </div>
     </div>
