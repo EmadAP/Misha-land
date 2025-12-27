@@ -19,7 +19,7 @@ function ContactPage() {
     setTimeout(() => setCopied(null), 2000);
   };
   return (
-    <div className="py-28 md:pt-48">
+    <div className="py-28">
       <MaxWidthWrapper>
         <div className="flex flex-col gap-20">
           <OtherPagesTitle title="تماس با ما" />

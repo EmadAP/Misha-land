@@ -15,7 +15,7 @@ import DetailsPage from "./app/pages/public/DetailsPage";
 import AboutUsPage from "./app/pages/public/AboutUsPage";
 import ContactPage from "./app/pages/public/ContactPage";
 import HowToBuyPage from "./app/pages/public/HowToBuyPage";
-import WarantyRulesPage from "./app/pages/public/WarantyRulesPage";
+import WarrantyRulesPage from "./app/pages/public/WarrantyRulesPage";
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/how-to-buy" element={<HowToBuyPage />} />
-        <Route path="/waranty-rules" element={<WarantyRulesPage />} />
+        <Route path="/warranty-rules" element={<WarrantyRulesPage />} />
       </Route>
       <Route element={<AuthLayout />}>
         <Route
