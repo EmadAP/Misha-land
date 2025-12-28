@@ -13,14 +13,19 @@ import {
   navWomenItems,
 } from "@/lib/mock/dummylists";
 
-function NavMobileSidebar({ open }: { open: boolean }) {
+type NavMobileSidebarProps = {
+  open: boolean;
+  onClose: () => void;
+};
+
+function NavMobileSidebar({ open, onClose }: NavMobileSidebarProps) {
   const menItems = navMenItems;
   const womenItems = navWomenItems;
   const accessoriesItems = navAccessoryItems;
   return (
     <div
       className={`
-          fixed top-18 left-0 h-fit w-full bg-background-10 z-50 shadow-xl
+          fixed top-18 left-0 h-full w-full bg-background-10 z-50 shadow-xl
           transition-transform duration-500
           ${open ? "translate-x-0" : "-translate-x-full"}
         `}
@@ -37,6 +42,7 @@ function NavMobileSidebar({ open }: { open: boolean }) {
             {menItems.map((item) => (
               <Link
                 to={item.href}
+                onClick={onClose}
                 className="hover:underline border-r border-r-primary-30 px-2"
               >
                 {item.label}
@@ -50,6 +56,7 @@ function NavMobileSidebar({ open }: { open: boolean }) {
             {womenItems.map((item) => (
               <Link
                 to={item.href}
+                onClick={onClose}
                 className="hover:underline border-r border-r-primary-30 px-2"
               >
                 {item.label}
@@ -63,6 +70,7 @@ function NavMobileSidebar({ open }: { open: boolean }) {
             {accessoriesItems.map((item) => (
               <Link
                 to={item.href}
+                onClick={onClose}
                 className="hover:underline border-r border-r-primary-30 px-2"
               >
                 {item.label}
@@ -74,6 +82,7 @@ function NavMobileSidebar({ open }: { open: boolean }) {
 
         <Link
           to="/browse"
+          onClick={onClose}
           className="group py-4 flex flex-row items-center justify-between"
         >
           <span className="text-lg font-semibold group-hover:underline">

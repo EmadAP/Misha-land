@@ -14,9 +14,9 @@ function HomeLandingBanner() {
         />
         <Link
           to="/browse?gender=men"
-          className="absolute inset-0 items-end flex flex-col justify-end p-6 transition duration-300 pb-10 no-underline"
+          className="absolute inset-0 items-end flex flex-col justify-end p-2 sm:p-6 transition duration-300 pb-10 no-underline"
         >
-          <span className="bg-background-10 flex flex-row items-center justify-between gap-4 px-6 py-2 font-semibold md:text-2xl text-lg rounded-md">
+          <span className="bg-background-10 flex flex-row items-center justify-between gap-2 sm:gap-4 px-2 sm:px-6 py-2 font-semibold md:text-2xl text-base sm:text-lg rounded-md">
             کالکشن مردانه
             <FaArrowLeftLong size={20} />
           </span>
@@ -30,9 +30,9 @@ function HomeLandingBanner() {
         />
         <Link
           to="/browse?gender=women"
-          className="absolute inset-0 items-end flex flex-col justify-end p-6 transition duration-300 pb-10 no-underline"
+          className="absolute inset-0 items-end flex flex-col justify-end p-2 sm:p-6 transition duration-300 pb-10 no-underline"
         >
-          <span className="bg-background-10 flex flex-row items-center justify-between gap-4 px-6 py-2 font-semibold md:text-2xl text-lg rounded-md">
+          <span className="bg-background-10 flex flex-row items-center justify-between gap-2 sm:gap-4 px-2 sm:px-6 py-2 font-semibold md:text-2xl text-base sm:text-lg rounded-md">
             کالکشن زنانه
             <FaArrowLeftLong size={20} />
           </span>

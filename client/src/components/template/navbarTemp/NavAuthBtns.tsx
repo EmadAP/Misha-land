@@ -12,18 +12,18 @@ function NavAuthBtns() {
     return <Skeleton className="h-8 w-28" />;
   }
   return (
-    <div className="flex flex-row items-center justify-between gap-3">
+    <div className="flex flex-row items-center justify-between gap-2">
       <div>
         {!isSignedIn && (
           <Link
             to="/sign-in"
-            className="py-1 px-4 border rounded-md border-primary-30 hover:bg-primary-30 hover:text-background-10 transition duration-150"
+            className="py-1 px-1 text-sm sm:text-base sm:px-3 border rounded-md border-primary-30 hover:bg-primary-30 hover:text-background-10 transition duration-150"
           >
             ورود | ثبت نام
           </Link>
         )}
         {isSignedIn && (
-          <div className="flex flex-row gap-3 items-center justify-between">
+          <div className="flex flex-row gap-2 items-center justify-between">
             <NavDropDown user={user} />
             <Link
               to="/cart"

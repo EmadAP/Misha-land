@@ -8,10 +8,10 @@ function TestimonialsAboutSection() {
   return (
     <div className="space-y-10">
       <div className="flex flex-col gap-4 justify-between items-start text-start">
-        <h3 className="text-2xl font-semibold">
+        <h3 className="text-xl sm:text-2xl font-semibold">
           تجربه‌ای جدید از خرید لباس در میشا لند
         </h3>
-        <p className="text-base">
+        <p className="text-sm sm:text-base">
           میشا لند جایی است که تنوع، کیفیت و قیمت مناسب در کنار هم قرار
           گرفته‌اند تا انتخاب لباس برای شما ساده‌تر، لذت‌بخش‌تر و مطمئن‌تر شود.
           در اینجا مجموعه‌ای گسترده از پوشاک زنانه، مردانه و بچگانه با طراحی‌های
@@ -25,10 +25,10 @@ function TestimonialsAboutSection() {
       {expanded && (
         <>
           <div className="flex flex-col gap-4 justify-between items-start text-start">
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-xl sm:text-2xl font-semibold">
               پوشاکی مناسب تمام سلیقه‌ها و تمام فصل‌ها
             </h3>
-            <p className="text-base">
+            <p className="text-sm sm:text-base">
               در میشا لند اهمیت فصل‌ها و تغییرات آن‌ها جدی گرفته شده است.
               مدل‌های خنک و نخی برای روزهای گرم سال، انواع لباس‌های پشمی و ضخیم
               برای زمستان و گزینه‌های کژوال و روزمره برای پاییز و بهار، همگی با
@@ -41,10 +41,10 @@ function TestimonialsAboutSection() {
           </div>
 
           <div className="flex flex-col gap-4 justify-between items-start text-start">
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-xl sm:text-2xl font-semibold">
               راحتی، کیفیت و زیبایی در کنار هم
             </h3>
-            <p className="text-base">
+            <p className="text-sm sm:text-base">
               میشا لند باور دارد که لباسی خوب، لباسی است که علاوه بر ظاهر جذاب،
               احساس راحتی ایجاد کند و دوام بالایی داشته باشد. به همین دلیل تمرکز
               ما بر انتخاب پارچه‌های باکیفیت، دوخت تمیز و ارائه مدل‌هایی با برش
@@ -57,10 +57,10 @@ function TestimonialsAboutSection() {
           </div>
 
           <div className="flex flex-col gap-4 justify-between items-start text-start">
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-xl sm:text-2xl font-semibold">
               تکمیل استایل با اکسسوری‌های متنوع
             </h3>
-            <p className="text-base">
+            <p className="text-sm sm:text-base">
               برای آنکه استایل شما کامل شود، میشا لند مجموعه‌ای از اکسسوری‌های
               کاربردی و زیبا ارائه می‌دهد؛ از کیف و کمربند گرفته تا عینک‌های
               ساده یا طرح‌دار که می‌توانند ظاهر شما را متفاوت و جذاب‌تر کنند.
@@ -70,10 +70,10 @@ function TestimonialsAboutSection() {
           </div>
 
           <div className="flex flex-col gap-4 justify-between items-start text-start">
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-xl sm:text-2xl font-semibold">
               خرید آسان، تجربه‌ای قابل اعتماد
             </h3>
-            <p className="text-base">
+            <p className="text-sm sm:text-base">
               هدف میشا لند همیشه این بوده که خرید لباس برای مشتریان خود تجربه‌ای
               بدون دردسر و همراه با اطمینان باشد. چه از طریق سایت ما خرید کنید و
               چه از فروشگاه‌های حضوری بازدید داشته باشید، تلاش کرده‌ایم فضایی
