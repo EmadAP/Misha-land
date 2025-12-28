@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   Accordion,
   AccordionContent,
@@ -16,7 +14,7 @@ export function TestimonialsFaq() {
       defaultValue="item-1"
     >
       <AccordionItem value="item-1">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-base md:text-lg text-start">
           میشا لند چه تفاوتی با فروشگاه‌های لباس دیگر دارد؟
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -31,7 +29,7 @@ export function TestimonialsFaq() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-base md:text-lg text-start">
           آیا محصولات میشا لند برای همه سنین مناسب هستند؟
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -45,7 +43,7 @@ export function TestimonialsFaq() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-base md:text-lg text-start">
           میشا لند چطور کیفیت لباس‌ها را تضمین می‌کند؟
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -60,7 +58,7 @@ export function TestimonialsFaq() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-4">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-base md:text-lg text-start">
           آیا امکان خرید لباس‌های فصلی یا مناسب شرایط آب‌وهوایی خاص وجود دارد؟
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -75,7 +73,7 @@ export function TestimonialsFaq() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-5">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-base md:text-lg text-start">
           اگر سایز مناسب خودم را ندانم، میشا لند چه کمکی می‌کند؟
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -90,7 +88,7 @@ export function TestimonialsFaq() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-6">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-base md:text-lg text-start">
           آیا عکس‌های محصولات با کالای واقعی مطابقت دارند؟
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -105,7 +103,7 @@ export function TestimonialsFaq() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-7">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-base md:text-lg text-start">
           میشا لند چه ضمانتی برای خرید مطمئن ارائه می‌دهد؟
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
@@ -120,7 +118,7 @@ export function TestimonialsFaq() {
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-8">
-        <AccordionTrigger>
+        <AccordionTrigger className="text-base md:text-lg text-start">
           آیا قیمت‌های میشا لند منصفانه و رقابتی هستند؟
         </AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">

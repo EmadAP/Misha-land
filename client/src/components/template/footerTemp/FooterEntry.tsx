@@ -15,12 +15,12 @@ function FooterEntry() {
             پوشاکی برای هر روز، هر فصل, هر سبک
           </p>
         </div>
-        <div className=" flex  flex-row  gap-2  justify-end lg:w-sm  lg:pr-10">
+        <div className="flex sm:flex-row flex-col  gap-2 justify-end lg:w-sm lg:pr-10">
           <Link to="#">
-            <FaTelegram className="size-14 md:size-10 text-primary-30 hover:text-primary-20" />
+            <FaTelegram className="size-8 sm:size-10 text-primary-30 hover:text-primary-20" />
           </Link>
           <Link to="#">
-            <FaInstagram className="size-14 md:size-10 text-primary-30 hover:text-primary-20" />
+            <FaInstagram className="size-8 sm:size-10 text-primary-30 hover:text-primary-20" />
           </Link>
         </div>
       </div>
