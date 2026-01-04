@@ -1,6 +1,5 @@
 import SidebarItemsSection from "@/components/sections/browsePageSection/SidebarItemsSection";
 import { Button } from "@/components/ui/button";
-import React from "react";
 
 function BrowseSidebarTemp() {
   return (

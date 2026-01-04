@@ -42,7 +42,7 @@ export const footerPages = [
 export const navMenItems = [
   { label: "تی‌شرت", href: "/browse?gender=men&subType=tshirt" },
   { label: "پیراهن", href: "/browse?gender=men&subType=shirt" },
-  { label: "هودی / سویشرت", href: "/browse?gender=men&subType=hoodie" },
+  { label: "سویشرت", href: "/browse?gender=men&subType=hoodie" },
   { label: "پلیور / بافت", href: "/browse?gender=men&subType=sweater" },
   { label: "کاپشن", href: "/browse?gender=men&subType=jacket" },
   { label: "شلوارک", href: "/browse?gender=men&subType=shorts" },
@@ -53,7 +53,7 @@ export const navMenItems = [
 export const navWomenItems = [
   { label: "بلوز", href: "/browse?gender=women&subType=blouse" },
   { label: "پیراهن", href: "/browse?gender=women&subType=dress" },
-  { label: "هودی / سویشرت", href: "/browse?gender=women&subType=hoodie" },
+  { label: "سویشرت", href: "/browse?gender=women&subType=hoodie" },
   { label: "ژاکت", href: "/browse?gender=women&subType=cardigan" },
   { label: "کاپشن", href: "/browse?gender=women&subType=jacket" },
   { label: "دامن", href: "/browse?gender=women&subType=skirt" },
